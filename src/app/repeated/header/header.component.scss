@@ -1,0 +1,33 @@
+.header_section {
+    background-color: #e7eaef;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    .head_logo {
+        .web_logo {
+            cursor: pointer;
+            width: 225px;
+            height: 70px;
+            img {
+
+            }
+        }
+    }
+    .head_nav_links {
+        display: flex;
+        align-items: center;
+        .nav_links_div {
+            .unOrderNavLinks {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+                .nav_link {
+                    padding: 0 15px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
