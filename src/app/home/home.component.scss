@@ -1,30 +1,1168 @@
-.static_section {
-    .static_row {
-        .content_col {
-            background: #9D9E9E;
-            padding: 90px;
-            .static_content {
-                margin: 0;
-                color: white;
-                font-size: 48px;
-                font-weight: 600;
-                letter-spacing: 4px;
-                padding-bottom:30px;
+.all_section {
+    margin-top: 90px;
+
+    // Home banner and map section
+    .static_section {
+        .static_row {
+            .content_col {
+                background: #66676a;
+                padding: 90px 90px 90px 120px;
+
+                .static_content {
+                    margin: 0;
+                    color: white;
+                    font-size: 48px;
+                    font-weight: 600;
+                    letter-spacing: 4px;
+                    padding-bottom: 30px;
+                }
+
+                .visit_btn {
+                    margin: 0;
+                    color: white;
+                    border: 1px solid white;
+                    padding: 5px 25px;
+                    border-radius: 0;
+                    cursor: pointer;
+                }
             }
-            .visit_btn {
-                margin: 0;
-                color: white;
-                border: 1px solid white;
-                padding: 5px 25px;
-                border-radius: 0;    
-                cursor: pointer;        
+
+            .map_col {
+                img {
+                    padding: 40px;
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
-        .map_col {
-            img {
-                width: 100%;
-                height: 100%;
+    }
+
+    // Projects card section
+    .card_section {
+        background: #e7eaee;
+        padding: 50px 0;
+        position: sticky;
+        top: -15px;
+
+        .container-fluid {
+            .section_content {
+                position: relative;
+
+                .section_text {
+                    margin: 0;
+                    padding: 35px 20% 45px 20%;
+                    font-size: 20px;
+                    letter-spacing: 1px;
+                }
+
+                .dot_man1 {
+                    width: 45px;
+                    height: 85px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 40px;
+                }
+
+                .dot_man2 {
+                    width: 115px;
+                    height: 87px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 30px;
+                }
             }
+
+            .nav_link_cards {
+                cursor: pointer;
+            }
+        }
+    }
+
+    // Gallery section
+    .gallery_section {
+        background: #e7eaee;
+        padding: 58px 0;
+        position: sticky;
+        top: -15px;
+        height: 100%;
+        box-shadow: 0 -8px 10px -8px lightgrey;
+
+        .container {
+            padding: 0 14px;
+
+            .gallery_heading {
+                .heading {
+                    margin: 0;
+                    padding: 0px 40px 40px 40px;
+                    font-size: 50px;
+                    font-weight: 500;
+                    text-align: center;
+                    letter-spacing: 3px;
+                }
+            }
+
+            .gallery_img {
+                img {
+                    object-fit: cover;
+                }
+
+                .banner_img {
+                    position: relative;
+
+                    p {
+                        margin: 0;
+                        position: absolute;
+                        bottom: 20px;
+                        left: 25px;
+                        font-size: 25px;
+                        color: white;
+                        font-weight: 500;
+                        letter-spacing: 2px;
+
+                    }
+
+                    height: 540px;
+                }
+
+                .bulk_images {
+                    .images {
+                        height: 270px;
+                        position: relative;
+
+                        p {
+                            margin: 0;
+                            position: absolute;
+                            bottom: 8px;
+                            left: 15px;
+                            font-size: 17px;
+                            color: white;
+                            letter-spacing: 1px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Who we are section
+    .who_we_are_section {
+        background: #e7eaee;
+        padding: 100px 0 125px 0;
+        position: sticky;
+        top: -25px;
+        box-shadow: 0 -8px 10px -8px lightgrey;
+
+        .container {
+            position: relative;
+            background: #e7eaee;
+
+            .section_image_absolute {
+                height: 400px;
+                width: 670px;
+                position: absolute;
+                bottom: -14%;
+            }
+
+            .section_row {
+                .section_col2 {
+                    position: relative;
+                    background: white;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+                    .section_image {
+                        display: none;
+                    }
+
+                    .dotman_img {
+                        height: 180px;
+                        width: 155px;
+                        margin: 55px 45px 0 15px;
+                    }
+
+                    .who_we_are_heading {
+                        padding: 100px 20px;
+
+                        h2 {
+                            letter-spacing: 2px;
+                            font-weight: 500;
+                            padding-bottom: 15px;
+                        }
+
+                        .who_we_are_content {
+                            line-height: 29px;
+                            letter-spacing: 1px;
+                            font-size: 17px;
+                        }
+
+                        .visit_btn {
+                            border: 1px solid black;
+                            padding: 5px 25px;
+                            border-radius: 0;
+                            cursor: pointer;
+                            margin: 20px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Our history section
+    .our_history_section {
+        background: #e7eaee;
+        padding: 100px 0 125px 0;
+        position: sticky;
+        top: -25px;
+        box-shadow: 0 -8px 10px -8px lightgrey;
+
+        .container {
+            position: relative;
+
+            .section_image_absolute {
+                height: 400px;
+                width: 670px;
+                position: absolute;
+                bottom: -14%;
+                right: 15px;
+            }
+
+            .section_row {
+                .section_col2 {
+                    // padding-right: 0;
+                    position: relative;
+                    background: white;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+                    .dotman_img {
+                        height: 145px;
+                        width: 145px;
+                        margin-left: auto;
+                        margin-top: 45px;
+                    }
+
+                    .section_image {
+                        display: none;
+                    }
+
+                    .who_we_are_heading {
+                        padding: 100px 20px;
+
+                        h2 {
+                            letter-spacing: 2px;
+                            font-weight: 500;
+                            padding-bottom: 15px;
+                        }
+
+                        .who_we_are_content {
+                            line-height: 29px;
+                            letter-spacing: 1px;
+                            font-size: 17px;
+                        }
+
+                        .visit_btn {
+                            border: 1px solid black;
+                            padding: 5px 25px;
+                            border-radius: 0;
+                            cursor: pointer;
+                            margin: 20px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Volunteering section
+    .volunteering_section {
+        background: #e7eaee;
+        padding: 100px 0 79px 0;
+        position: sticky;
+        top: -25px;
+        box-shadow: 0 -8px 10px -8px lightgrey;
+
+        .container {
+            position: relative;
+
+            .section_image_absolute {
+                height: 400px;
+                width: 670px;
+                position: absolute;
+                bottom: -14%;
+            }
+
+            .section_row {
+                .section_col2 {
+                    // padding-left: 0 !important;
+                    position: relative;
+                    background: white;
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+                    .section_image {
+                        display: none;
+                    }
+
+                    .dotman_img {
+                        height: 140px;
+                        width: 140px;
+                        margin: 94px 45px 0 0;
+                    }
+
+                    .who_we_are_heading {
+                        padding: 100px 20px;
+
+                        h2 {
+                            letter-spacing: 2px;
+                            font-weight: 500;
+                            padding-bottom: 15px;
+                        }
+
+                        .who_we_are_content {
+                            line-height: 29px;
+                            letter-spacing: 1px;
+                            font-size: 17px;
+                        }
+
+                        .visit_btn {
+                            border: 1px solid black;
+                            padding: 5px 25px;
+                            border-radius: 0;
+                            cursor: pointer;
+                            margin: 20px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .parallaxParent {
+		height: 100vh;
+		overflow: hidden;
+	}
+	.parallaxParent > * {
+		height: 200%;
+		position: relative;
+		top: -100%;
+	}
+}
+
+//responsiveness for multiple screens
+@media (max-width:1199px) {
+    .all_section {
+        .static_section {
+            .static_row {
+                .content_col {
+                    padding: 60px 75px 60px 75px;
+                }
+            }
+        }
+
+        .gallery_section {
+            .container {
+                .gallery_img {
+                    .banner_img {
+                        height: 490px;
+                    }
+
+                    .bulk_images {
+                        .images {
+                            height: 245px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .who_we_are_section {
+            .container {
+                .section_image_absolute {
+                    height: 387px;
+                    width: 575px;
+                }
+
+                .section_row {
+                    .section_col2 {
+                        .who_we_are_heading {
+                            padding: 80px 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .our_history_section {
+            .container {
+                .section_image_absolute {
+                    height: 387px;
+                    width: 575px;
+                }
+
+                .section_row {
+                    .section_col2 {
+                        .who_we_are_heading {
+                            padding: 80px 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .volunteering_section {
+            padding: 100px 0 77px 0;
+
+            .container {
+                .section_image_absolute {
+                    height: 387px;
+                    width: 575px;
+                }
+
+                .section_row {
+                    .section_col2 {
+                        .who_we_are_heading {
+                            padding: 80px 15px;
+                        }
+
+                        .dotman_img {
+                            margin: 95px 45px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .all_section {
+        .static_section {
+            .static_row {
+                .content_col {
+                    padding: 75px 90px 75px 90px;
+
+                    .static_content {
+                        font-size: 30px;
+                    }
+                }
+
+                .map_col {
+                    img {
+                        padding: 27px;
+                    }
+                }
+            }
+        }
+
+        .card_section {
+            .container-fluid {
+                .section_content {
+                    .section_text {
+                        padding: 30px 20% 40px 20%;
+                        font-size: 18px;
+                    }
+
+                    .dot_man1 {
+                        left: 50px;
+                        width: 38px;
+                        height: 71px;
+                    }
+
+                    .dot_man2 {
+                        width: 95px;
+                        height: 71px;
+                        right: 50px;
+                    }
+                }
+            }
+        }
+
+        .gallery_section {
+            .container {
+                .gallery_heading {
+                    .heading {
+                        padding: 0px 40px 30px 40px;
+                        font-size: 45px;
+                    }
+                }
+
+                .gallery_img {
+
+                    .banner_img {
+
+                        p {
+                            bottom: 15px;
+                            font-size: 20px;
+                            letter-spacing: 1px;
+                        }
+
+                        height: 380px;
+                    }
+
+                    .bulk_images {
+                        .images {
+                            height: 190px;
+
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .who_we_are_section {
+            .container {
+                .section_image_absolute {
+                    height: 372px;
+                    width: 590px;
+                }
+
+                .section_row {
+                    .section_col2 {
+
+                        .who_we_are_heading {
+                            padding: 63px 20px;
+
+                            .who_we_are_content {
+                                line-height: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .our_history_section {
+            .container {
+
+                .section_image_absolute {
+                    height: 372px;
+                    width: 590px;
+                }
+
+                .section_row {
+                    .section_col2 {
+
+                        .who_we_are_heading {
+                            padding: 63px 20px;
+
+                            .who_we_are_content {
+                                line-height: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .volunteering_section {
+            padding: 100px 0 71px 0;
+
+            .container {
+
+                .section_image_absolute {
+                    height: 372px;
+                    width: 590px;
+                }
+
+                .section_row {
+                    .section_col2 {
+                        .dotman_img {
+                            height: 110px;
+                            width: 110px;
+                            margin: 92px 45px 0 0;
+                        }
+
+                        .who_we_are_heading {
+                            padding: 63px 20px;
+
+                            .who_we_are_content {
+                                line-height: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:991px) {
+    .all_section {
+        margin-top: 70px;
+
+        .static_section {
+            .static_row {
+                .content_col {
+                    padding: 55px 75px 60px 55px;
+
+                    .static_content {
+                        font-size: 30px;
+                    }
+                }
+
+                .map_col {
+                    img {
+                        padding: 27px 17px;
+                    }
+                }
+            }
+        }
+
+        .card_section {
+            top: -80%;
+            .container-fluid {
+                .section_content {
+                    .section_text {
+                        padding: 30px 20% 40px 20%;
+                        font-size: 18px;
+                    }
+
+                    .dot_man1 {
+                        left: 50px;
+                        width: 38px;
+                        height: 71px;
+                    }
+
+                    .dot_man2 {
+                        width: 95px;
+                        height: 71px;
+                        right: 50px;
+                    }
+                }
+            }
+        }
+
+        .gallery_section {
+            .container {
+                .gallery_heading {
+                    .heading {
+                        padding: 0px 40px 30px 40px;
+                        font-size: 45px;
+                    }
+                }
+
+                .gallery_img {
+
+                    .banner_img {
+
+                        p {
+                            bottom: 15px;
+                            font-size: 20px;
+                            letter-spacing: 1px;
+                        }
+
+                        height: 380px;
+                    }
+
+                    .bulk_images {
+                        .images {
+                            height: 190px;
+
+                            p {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .who_we_are_section {
+            .container {
+                .section_image_absolute {
+                    height: 297px;
+                    width: 400px;
+                }
+
+                .section_row {
+                    .section_col2 {
+                        .dotman_img {
+                            height: 150px;
+                            width: 125px;
+                        }
+
+                        .who_we_are_heading {
+                            padding: 45px 15px;
+
+                            h2 {
+                                padding-bottom: 10px;
+                                font-size: 1.8rem;
+                            }
+
+                            .who_we_are_content {
+                                line-height: 25px;
+                                font-size: 15px;
+                            }
+
+                            .visit_btn {
+                                margin: 10px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .our_history_section {
+            .container {
+
+                .section_image_absolute {
+                    height: 297px;
+                    width: 400px;
+                }
+
+                .section_row {
+                    .section_col2 {
+                        .dotman_img {
+                            height: 125px;
+                            width: 125px;
+                        }
+
+                        .who_we_are_heading {
+                            padding: 45px 15px;
+
+                            h2 {
+                                padding-bottom: 10px;
+                                font-size: 1.8rem;
+                            }
+
+                            .who_we_are_content {
+                                line-height: 25px;
+                                font-size: 15px;
+                            }
+
+                            .visit_btn {
+                                margin: 10px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .volunteering_section {
+            padding: 100px 0 62px 0;
+            .container {
+                .section_image_absolute {
+                    height: 297px;
+                    width: 400px;
+                }
+
+                .section_row {
+                    .section_col2 {
+                        .dotman_img {
+                            height: 112px;
+                            width: 112px;
+                        }
+
+                        .who_we_are_heading {
+                            padding: 45px 15px;
+
+                            h2 {
+                                padding-bottom: 10px;
+                                font-size: 1.8rem;
+                            }
+
+                            .who_we_are_content {
+                                line-height: 25px;
+                                font-size: 15px;
+                            }
+
+                            .visit_btn {
+                                margin: 10px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .all_section {
+        margin-top: 70px;
+
+        .static_section {
+            .static_row {
+                .content_col {
+                    padding: 30px 45px 30px 45px;
+                    .static_content {
+                        font-size: 25px;
+                        letter-spacing: 3px;
+                    }
+                }
+            }
+        }
+
+        .card_section {
+            .container-fluid {
+                .section_content {
+                    .section_text {
+                        padding: 25px 15px 90px 15px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .gallery_section {
+            .container {
+                .gallery_heading {
+                    .heading {
+                        padding: 0px 30px 20px 30px;
+                        font-size: 40px;
+                    }
+                }
+
+                .gallery_img {
+                    .banner_img {
+                        height: 350px;
+                    }
+
+                    .bulk_images {
+                        .images {
+                            height: 175px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .who_we_are_section {
+
+            .container {
+                .section_image_absolute {
+                    display: none;
+                }
+
+                .section_row {
+                    .section_col2 {
+                        .section_image {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        .dotman_img {
+                            height: 145px;
+                            width: 125px;
+                        }
+
+                        .who_we_are_heading {
+                            padding: 45px 0px;
+
+                            h2 {
+                                letter-spacing: 1px;
+                                padding-bottom: 10px;
+                                font-size: 1.8rem;
+                            }
+
+                            .who_we_are_content {
+                                line-height: 25px;
+                                font-size: 14px;
+                            }
+
+                            .visit_btn {
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .our_history_section {
+            .container {
+                .section_image_absolute {
+                    display: none;
+                }
+
+                .section_row {
+                    .main_content {
+                        flex-direction: column-reverse;
+                    }
+
+                    .section_col2 {
+                        .section_image {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        .dotman_img {
+                            height: 125px;
+                            width: 125px;
+                            margin-bottom: 15px;
+                        }
+
+                        .who_we_are_heading {
+                            padding: 45px 0px;
+
+                            h2 {
+                                letter-spacing: 1px;
+                                padding-bottom: 10px;
+                                font-size: 1.8rem;
+                            }
+
+                            .who_we_are_content {
+                                line-height: 25px;
+                                font-size: 14px;
+                            }
+
+                            .visit_btn {
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .volunteering_section {
+            padding: 100px 0 60px 0;
+
+            .container {
+                .section_image_absolute {
+                    display: none;
+                }
+
+                .section_row {
+                    .section_col2 {
+                        .section_image {
+                            display: block;
+                            width: 100%;
+                        }
+
+                        .dotman_img {
+                            height: 108px;
+                            width: 108px;
+                        }
+
+                        .who_we_are_heading {
+                            padding: 45px 0px;
+
+                            h2 {
+                                letter-spacing: 1px;
+                                padding-bottom: 10px;
+                                font-size: 1.8rem;
+                            }
+
+                            .who_we_are_content {
+                                line-height: 25px;
+                                font-size: 14px;
+                            }
+
+                            .visit_btn {
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:575px) {
+    .all_section {
+        margin-top: 60px;
+        .static_section {
+            .static_row {
+                .content_col {
+                    padding: 30px 55px 30px 55px;
+                    .static_content {
+                        font-size: 20px;
+                    }
+                }
+                .map_col {
+                    text-align: center;
+                    img {
+                        width: 75%;
+                    }
+                }
+            }
+        }
+        .card_section {
+            top: -145%;
+        }
+        .gallery_section {
+            top: -35%;
+        }
+        .who_we_are_section {
+            top: -48%;
+        }
+        .our_history_section {
+            top: -48%;
+        }
+        .volunteering_section {
+            top: -48%;
+        }
+    }
+}
+
+@media (max-width:425px) {
+    .all_section {
+        margin-top: 60px;
+
+        .static_section {
+            .static_row {
+                .content_col {
+                    padding: 35px 60px 35px 60px;
+                }
+            }
+        }
+
+        .card_section {
+            top: -152%;
+            .container-fluid {
+                .section_content {
+                    .section_text {
+                        padding: 25px 15px 80px 15px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .gallery_section {
+            top: -40%;
+        }
+
+        .who_we_are_section {
+            top: -40%;
+            .container {
+                .section_row {
+                    .section_col2 {
+
+                        .dotman_img {
+                            margin: 10px auto 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        .our_history_section {
+            top: -45%;
+            .container {
+                .section_row {
+                    .section_col2 {
+                        .dotman_img {
+                            height: 125px;
+                            width: 125px;
+                        }
+
+                        .who_we_are_heading {
+                            padding: 45px 0px;
+
+                            h2 {
+                                letter-spacing: 1px;
+                                padding-bottom: 10px;
+                                font-size: 1.8rem;
+                            }
+
+                            .who_we_are_content {
+                                line-height: 25px;
+                                font-size: 14px;
+                            }
+
+                            .visit_btn {
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .volunteering_section {
+            padding: 100px 0 60px 0;
+            top: -40%;
+            .container {
+                .section_row {
+                    .section_col2 {
+                        .dotman_img {
+                            height: 108px;
+                            width: 108px;
+                        }
+
+                        .who_we_are_heading {
+                            padding: 45px 0px;
+
+                            h2 {
+                                letter-spacing: 1px;
+                                padding-bottom: 10px;
+                                font-size: 1.8rem;
+                            }
+
+                            .who_we_are_content {
+                                line-height: 25px;
+                                font-size: 14px;
+                            }
+
+                            .visit_btn {
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width:375px) {
+    .all_section {
+        .static_section {
+            .static_row {
+                .content_col {
+                    padding: 30px 39px 30px 39px;
+                }
+            }
+        }
+        .gallery_section {
+            top: -32%;
+            .container {
+                .gallery_img {
+                    .banner_img {
+                        height: 330px;
+                    }
+
+                    .bulk_images {
+                        .images {
+                            height: 165px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:350px) {
+    .all_section {
+        .static_section {
+            .static_row {
+                .content_col {
+                    padding: 30px;
+
+                    .static_content {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+        .card_section {
+            top: -167%;
+        }
+    }
+}
+
+@media (max-width:335px) {
+    .all_section {
+        .card_section {
+            top: -180%;
         }
     }
 }

@@ -1,5 +1,5 @@
 <!-- Header Start -->
-<section class="header_section">
+<section [ngClass]="{ header_section: scrolled, header_section1: !scrolled}" id="header">
     <!-- Header Logo Section Start -->
     <div class="head_logo">
         <div class="web_logo">
@@ -7,19 +7,39 @@
         </div>
     </div>
     <!-- Header Logo Section End -->
-    <!-- Header Nav Links Section Start -->
+    <!-- Header Nav Links Section for desktop screen Start -->
     <div class="head_nav_links">
         <div class="nav_links_div">
             <ul class="unOrderNavLinks">
                 <li class="nav_link" *ngFor="let item of navLinks">
                     {{item}}
                 </li>
-                <li class="nav_link pr-0">
+                <li class="nav_link1 pr-0">
                     <i class="fa fa-search"></i>
                 </li>
             </ul>
         </div>
     </div>
-    <!-- Header Nav Links Section End -->
+    <!-- Header Nav Links Section for desktop screen End -->
+    <!-- Header Nav Links Section for mobile screen Start -->
+    <div class="resp_head_nav_links">
+        <div class="nav_icon d-flex align-items-center">
+            <div class="nav_link1 px-3">
+                <i class="fa fa-search"></i>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span (click)="openmenu()" *ngIf="!openMenu"><i style="font-size:24px" class="fa">&#xf0c9;</i></span>
+                <span (click)="openmenu()" *ngIf="openMenu"><i style="font-size:24px " class="fa">&#xf00d;</i></span>
+            </button>
+        </div>
+        <div class="open-menu" *ngIf="openMenu">
+            <ul class="responsive-menu">
+                <li class="nav_link" *ngFor="let item of navLinks">
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Header Nav Links Section for mobile screen End -->
 </section>
 <!-- Header End -->

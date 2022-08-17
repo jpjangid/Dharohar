@@ -1,0 +1,184 @@
+// footer section
+.footer_section {
+    background: #E6E6E6;
+    margin-top: 100px;
+
+    .container {
+        .quick_links {
+            line-height: 33px;
+
+            .footer_heading {
+                padding-bottom: 10px;
+                font-size: 22px;
+                letter-spacing: 2px;
+                font-weight: 500;
+            }
+
+            .footer_sub_heading {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+        }
+
+        .social_links {
+            text-align: right;
+
+            .footer_heading {
+                padding-bottom: 10px;
+                font-size: 22px;
+                letter-spacing: 2px;
+                font-weight: 500;
+            }
+
+            .social_icons {
+                padding-bottom: 10px;
+                display: flex;
+                justify-content: right;
+
+                .icon_images {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 10px;
+
+                    img {
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .secure_img {
+                margin-left: auto;
+                width: 120px;
+                height: 40px;
+            }
+        }
+
+        p {
+            margin: 0;
+            cursor: pointer;
+        }
+        .image_div {
+            margin: auto;
+            .dotman_img {
+                width: 90px;
+                margin: auto;
+            }
+        }
+
+    }
+}
+
+// copy right section
+.copyright_section {
+    .container {
+        p {
+            font-size: 13px;
+            padding: 10px 0;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .footer_section {
+        .container {
+            max-width: none;
+            .quick_links {
+                line-height: 30px;
+    
+                .footer_heading {
+                    padding-bottom: 6px;
+                    font-size: 20px;
+                }
+    
+                .footer_sub_heading {
+                    font-size: 18px;
+                }
+            }
+    
+            .social_links {
+                .footer_heading {
+                    padding-bottom: 6px;
+                    font-size: 20px;
+                }
+    
+                .social_icons {
+                    padding-bottom: 6px;
+    
+                    .icon_images {
+                        width: 27px;
+                        height: 27px;
+                    }
+                }
+    
+                .secure_img {
+                    margin-left: auto;
+                    width: 120px;
+                    height: 40px;
+                }
+            }
+    
+            p {
+                margin: 0;
+                cursor: pointer;
+            }
+            .image_div {
+                margin: auto;
+            }
+            .dotman_img {
+                width: 80px;
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .footer_section {
+        .container {
+            .quick_links {
+                line-height: 27px;
+    
+                .footer_heading {
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    padding-bottom: 8px;
+                }
+    
+                .footer_sub_heading {
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                }
+            }
+    
+            .social_links {
+                text-align: right;
+    
+                .footer_heading {
+                    padding-bottom: 8px;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+    
+                .social_icons {
+                    padding-bottom: 8px;
+    
+                    .icon_images {
+                        width: 22px;
+                        height: 22px;
+                        margin-left: 8px;
+                    }
+                }
+    
+                .secure_img {
+                    width: 85px;
+                    height: 30px;
+                }
+            }
+            .image_div {
+                margin: auto;
+                .dotman_img {
+                    width: 60px;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

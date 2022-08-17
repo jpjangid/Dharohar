@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { RepeatedModule } from '../repeated/repeated.module';
 const exportdata: any = [
   HomeComponent
 ]
@@ -13,7 +14,8 @@ const exportdata: any = [
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    RepeatedModule
   ],
   exports: [
     ...exportdata
