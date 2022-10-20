@@ -1,3 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
-// @import url('./assets/Kohinoor\ Devanagari.ttf');
-// @import url('./assets/Kohinoor\ Devanagari\ Semibold.ttf');
+@font-face {
+    font-family: "kohinoorbold";
+    src: local("Kohinoor"), url(./assets/fonts/KohinoorDevanagari-Bold.otf) format("truetype");
+}
+@font-face {
+    font-family: "Kohinoorsemibold";
+    src: local("Kohinoor"), url(./assets/fonts/KohinoorDevanagari-Semibold.otf) format("truetype");
+}
+@font-face {
+    font-family: "Kohinoorlight";
+    src: local("Kohinoor"), url(./assets/fonts/KohinoorDevanagari-Light.otf) format("truetype");
+}
+@font-face {
+    font-family: "Kohinoormedium";
+    src: local("Kohinoor"), url(./assets/fonts/KohinoorDevanagari-Medium.otf) format("truetype");
+}
+@font-face {
+    font-family: "Kohinoorregular";
+    src: local("Kohinoor"), url(./assets/fonts/KohinoorDevanagari-Regular.otf) format("truetype");
+}
+p {
+    margin: 0;
+    font-size: 20px;
+}
+h2 {
+    margin: 0;
+}
+.all_section {
+    margin-top: 120px;
+}
+.para_family {
+    color: #6f6e6e;
+    font-family: kohinoorregular;
+}
+.light-color {
+    color: #6f6e6e;
+}
+.heading_family {
+    color: #1e1e1e;
+    font-family: kohinoorbold;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+@media (max-width:1199px) {
+    p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width:1199px) {
+    .all_section {
+        margin-top: 120px;
+    }
+}
+@media (max-width:1024px) {
+    .all_section {
+        margin-top: 90px;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+@media (max-width:767px) {
+    .all_section {
+        margin-top: 60px;
+    }
+}

@@ -1,0 +1,19 @@
+<section class="overview_section">
+    <div class="row static_row m-0">
+        <div class="col-12 map_col p-0">
+            <img src="{{bannerData.image}}" alt="">
+        </div>
+    </div>
+</section>
+<section class="breadcrumb_section">
+    <div>
+        <div class="breadcrumb_links heading_family">
+            <ng-container *ngFor="let item of bannerData.breadCrumb; index as index">
+                {{item}}
+                <ng-container *ngIf="((bannerData.breadCrumb?.length)-1) != index">
+                    <div class="breadcrumb_dots" style="color: #ffca05;" *ngFor="let item of [].constructor(3)"></div>
+                </ng-container>
+            </ng-container>
+            </div>
+    </div>
+</section>

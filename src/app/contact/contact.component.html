@@ -1,0 +1,37 @@
+<div class="all_section">
+    <app-breadcrumb-banner [bannerData]="bannerData"></app-breadcrumb-banner>
+    <section class="contact_section">
+        <div class="contact_content">
+            <p class="para_family" [innerHTML]="headContent"></p>
+        </div>
+        <div class="form_row">
+            <div class="contact_form">
+                <form>
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control">
+                    </div>
+                    <div>
+                        <label for="subject">Subject</label>
+                        <input type="text" name="subject" id="subject" class="form-control">
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" class="form-control"></textarea>
+                    </div>
+                    <div class="text-right mt-30 send_btn">
+                        <img src="./../../assets/send button.png" alt="">
+                    </div>
+                </form>
+            </div>
+            <div class="iframe_row">
+                <div [innerHTML]="iFrame"></div>
+                <p class="para_family" style="margin-top: 24px;" [innerText]="address"></p>
+            </div>
+        </div>
+    </section>
+</div>

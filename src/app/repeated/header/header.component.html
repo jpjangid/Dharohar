@@ -1,22 +1,35 @@
 <!-- Header Start -->
-<section [ngClass]="{ header_section: scrolled, header_section1: !scrolled}" id="header">
+<section [ngClass]="{ header_section: false, header_section1: true}" id="header">
     <!-- Header Logo Section Start -->
     <div class="head_logo">
-        <div class="web_logo">
-            <img src="../../../assets/dharohar logo_.png" alt="" width="100%" height="100%">
+        <div class="web_logo" (click)="navigate('/')">
+            <img src="../../../assets/logo.png" alt="" width="100%" height="100%">
         </div>
     </div>
     <!-- Header Logo Section End -->
     <!-- Header Nav Links Section for desktop screen Start -->
     <div class="head_nav_links">
         <div class="nav_links_div">
-            <ul class="unOrderNavLinks">
-                <li class="nav_link" *ngFor="let item of navLinks">
-                    {{item}}
-                </li>
-                <li class="nav_link1 pr-0">
+            <div class="language_dropdown">
+                <div class="nav_link1">
                     <i class="fa fa-search"></i>
-                </li>
+                </div>
+                <div class="nav_link para_family">
+                    <span>English</span><i class="fa fa-angle-down" style="padding-left:10px;"></i>
+                    <!-- <select name="" id="" class="form-control">
+                        <option selected>English</option>
+                        <option value="">Hindi</option>
+                    </select> -->
+                    
+                    <!-- <p-dropdown [options]="language" [(ngModel)]="language" optionLabel="name" optionDisabled="inactive"></p-dropdown> -->
+                </div>
+            </div>
+            <ul class="unOrderNavLinks">
+                <ng-container *ngFor="let item of navLinks">
+                    <li class="nav_link para_family" (click)="navigate(item.slug_eng)">
+                        {{item.title_eng}}
+                    </li>
+                </ng-container>
             </ul>
         </div>
     </div>
@@ -25,17 +38,19 @@
     <div class="resp_head_nav_links">
         <div class="nav_icon d-flex align-items-center">
             <div class="nav_link1 px-3">
-                <i class="fa fa-search"></i>
+                <i class="fa fa-search light-color"></i>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span (click)="openmenu()" *ngIf="!openMenu"><i style="font-size:24px" class="fa">&#xf0c9;</i></span>
-                <span (click)="openmenu()" *ngIf="openMenu"><i style="font-size:24px " class="fa">&#xf00d;</i></span>
+            <button class="navbar-toggler pr-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span (click)="openmenu()" *ngIf="!openMenu"><i style="font-size:24px;" class="fa fa-bars light-color"></i></span>
+                <span (click)="openmenu()" *ngIf="openMenu"><i style="font-size:24px;" class="fa light-color">&#xf00d;</i></span>
             </button>
         </div>
         <div class="open-menu" *ngIf="openMenu">
             <ul class="responsive-menu">
-                <li class="nav_link" *ngFor="let item of navLinks">
-                    {{item}}
+                <li class="nav_link para_family" *ngFor="let item of navLinks" (click)="navigate(item.path)">
+                    {{item.name}}
                 </li>
             </ul>
         </div>

@@ -1,0 +1,302 @@
+.overview_section {
+
+    .static_row {
+        .content_col {
+            background: #66676a;
+            padding: 90px 90px 90px 120px;
+
+            .static_content {
+                margin: 0;
+                color: white;
+                font-size: 48px;
+                font-weight: 600;
+                letter-spacing: 4px;
+                padding-bottom: 30px;
+            }
+
+            .visit_btn {
+                margin: 0;
+                color: white;
+                border: 1px solid white;
+                padding: 5px 25px;
+                border-radius: 0;
+                cursor: pointer;
+            }
+        }
+
+        .map_col {
+            height: 210px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .content_section {
+            padding: 30px 0;
+
+            p {
+                font-size: 40px;
+                font-family: kohinoorbold;
+            }
+        }
+    }
+}
+
+.breadcrumb_section {
+    padding: 26.25px 60px;
+    background: #f4f4f4;
+
+    div {
+        font-size: 25px;
+        font-family: 'Kohinoorregular';
+        // span {
+        //     font-size: 50px;
+        // }
+    }
+
+    .breadcrumb_links {
+        display: flex;
+        align-items: baseline;
+
+        .breadcrumb_dots {
+            width: 5px;
+            height: 5px;
+            border-radius: 25px;
+
+            &:first-child {
+                margin: 0 3px 0 3px;
+                background: #ffca05;
+            }
+
+            &:nth-child(2) {
+                margin: 0 3px 0 0;
+                background: #f26f21;
+            }
+
+            &:last-child {
+                margin: 0 8px 0 0;
+                background: #e21f26;
+            }
+        }
+    }
+}
+
+@media (max-width:1299px) {
+    .overview_section {
+
+        .static_row {
+            .content_col {
+                background: #66676a;
+                padding: 90px 90px 90px 120px;
+
+                .static_content {
+                    margin: 0;
+                    color: white;
+                    font-size: 48px;
+                    font-weight: 600;
+                    letter-spacing: 4px;
+                    padding-bottom: 30px;
+                }
+
+                .visit_btn {
+                    margin: 0;
+                    color: white;
+                    border: 1px solid white;
+                    padding: 5px 25px;
+                    border-radius: 0;
+                    cursor: pointer;
+                }
+            }
+
+            .map_col {
+                height: 210px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content_section {
+                padding: 30px 0;
+
+                p {
+                    font-size: 40px;
+                    font-family: kohinoorbold;
+                }
+            }
+        }
+    }
+
+    .breadcrumb_section {
+        padding: 27.75px 60px;
+        background: #f4f4f4;
+
+        div {
+            font-size: 23px;
+            font-family: 'Kohinoorregular';
+
+            span {
+                font-size: 35px;
+            }
+        }
+
+        .breadcrumb_dots {
+            width: 4px;
+            height: 4px;
+
+            &:first-child {
+                margin: 0 3px 0 3px;
+                background: #ffca05;
+            }
+
+            &:nth-child(2) {
+                margin: 0 3px 0 0;
+                background: #f26f21;
+            }
+
+            &:last-child {
+                margin: 0 8px 0 0;
+                background: #e21f26;
+            }
+        }
+    }
+}
+
+@media (max-width:1024px) {
+
+    .overview_section {
+
+        .static_row {
+            .content_col {
+                background: #66676a;
+                padding: 90px 90px 90px 120px;
+
+                .static_content {
+                    margin: 0;
+                    color: white;
+                    font-size: 48px;
+                    font-weight: 600;
+                    letter-spacing: 4px;
+                    padding-bottom: 30px;
+                }
+
+                .visit_btn {
+                    margin: 0;
+                    color: white;
+                    border: 1px solid white;
+                    padding: 5px 25px;
+                    border-radius: 0;
+                    cursor: pointer;
+                }
+            }
+
+            .map_col {
+                height: 210px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content_section {
+                padding: 30px 0;
+
+                p {
+                    font-size: 40px;
+                    font-family: kohinoorbold;
+                }
+            }
+        }
+    }
+
+    .breadcrumb_section {
+        padding: 15px 45px;
+        background: #f4f4f4;
+
+        div {
+            font-size: 20px;
+            font-family: 'Kohinoorregular';
+
+            span {
+                font-size: 35px;
+            }
+        }
+
+        .breadcrumb_dots {
+            width: 4px !important;
+            height: 4px !important;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    // margin-top: 60px;
+
+    .overview_section {
+
+        .static_row {
+            .content_col {
+                background: #66676a;
+                padding: 90px 90px 90px 120px;
+
+                .static_content {
+                    margin: 0;
+                    color: white;
+                    font-size: 48px;
+                    font-weight: 600;
+                    letter-spacing: 4px;
+                    padding-bottom: 30px;
+                }
+
+                .visit_btn {
+                    margin: 0;
+                    color: white;
+                    border: 1px solid white;
+                    padding: 5px 25px;
+                    border-radius: 0;
+                    cursor: pointer;
+                }
+            }
+
+            .map_col {
+                height: 210px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content_section {
+                padding: 30px 0;
+
+                p {
+                    font-size: 40px;
+                    font-family: kohinoorbold;
+                }
+            }
+        }
+    }
+
+    .breadcrumb_section {
+        padding: 16.5px 30px;
+        background: #f4f4f4;
+
+        div {
+            font-size: 18px;
+            font-family: 'Kohinoorregular';
+
+            span {
+                font-size: 25px;
+            }
+        }
+    }
+}

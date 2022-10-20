@@ -1,0 +1,38 @@
+<div class="all_section">
+    <app-breadcrumb-banner [bannerData]="bannerData"></app-breadcrumb-banner>
+    <section class="stories_section">
+        <div class="story_content">
+            <p class="para_family" [innerHTML]="headContent"></p>
+        </div>
+        <div class="row mx-0 dropdown_section mt-30 mb-30">
+            <div class="dropdown_div">
+                <select name="dropdown" class="form-control" id="dropdown"  (change)="getFilterValue($event, 'category')">
+                    <option disabled selected>Select Filter</option>
+                    <ng-container *ngFor="let item of filterCategory">
+                        <option [value]="item.id">{{item.category_title}}</option>
+                    </ng-container>
+                </select>
+            </div>
+            <div class="dropdown_div">
+                <select name="dropdown" class="form-control" id="dropdown" (change)="getFilterValue($event, 'subcategory')">
+                    <option disabled selected>Select Filter</option>
+                    <ng-container *ngFor="let item of filterSubCategory">
+                        <option [value]="item.id">{{item.sub_category_title}}</option>
+                    </ng-container>
+                </select>
+            </div>
+        </div>
+        <div class="row m-0 story_card">
+            <ng-container *ngFor="let item of listContent; index as index">
+                <div class="multi_cards">
+                    <div class="story_image">
+                        <img src="{{imageBaseurl+'section_third_list_image/'+item.image}}" alt="">
+                    </div>
+                    <div class="story_card_content">
+                        <p class="para_family" [innerHTML]="item.text_content"></p>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </section>
+</div>

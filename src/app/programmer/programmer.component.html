@@ -1,0 +1,62 @@
+<div class="all_section">
+    <app-breadcrumb-banner [bannerData]="bannerData"></app-breadcrumb-banner>
+    <section class="main_content">
+        <div class="heading_section">
+            <p class="main_heading">{{programData.heading}}</p>
+        </div>
+        <div class="both_section">
+            <div class="content_section">
+                <ng-container *ngFor="let item of [].constructor(1)">
+                    <p class="light-color" [innerText]="programData.text_content"></p>
+                </ng-container>
+            </div>
+            <div class="images_section">
+                <ng-container *ngFor="let item of [].constructor(1)">
+                    <img src="{{programData.image}}" alt="">
+                </ng-container>
+            </div>
+        </div>
+        <div class="both_section_reponsive">
+            <ng-container *ngFor="let item of [].constructor(1)">
+                <div class="content_section">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+                        sunt
+                        ullam blanditiis cum sit fugiat, praesentium tenetur modi ducimus et, obcaecati perferendis
+                        itaque
+                        laborum magni commodi rem sed possimus cupiditate! Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Illo quam nulla libero iste veritatis ipsum illum, accusamus deserunt nihil,
+                        iusto
+                        architecto earum excepturi ipsam tempore distinctio consectetur amet ducimus. Hic!</p>
+                    <!-- </ng-container> -->
+                </div>
+                <div class="images_section">
+                    <!-- <ng-container *ngFor="let item of [].constructor(3)"> -->
+                    <img src="./../../assets/gallery2.jpeg" alt="">
+                </div>
+            </ng-container>
+        </div>
+    </section>
+    <section class="story_section">
+        <ng-container *ngFor="let item of storyImage; index as index">
+            <div class="card_image">
+                <img src="{{imageBaseurl +'section_third_image/'+ item.image}}" alt="">
+                <div class="design_section" *ngIf="index==0" style="background:#ffca05"></div>
+                <div class="design_section" *ngIf="index==1" style="background:#f26f21"></div>
+                <div class="design_section" *ngIf="index==2" style="background:#e21f26"></div>
+            </div>
+        </ng-container>
+    </section>
+    <section class="carousal_section">
+        <p-carousel [value]="sliderImages" [numVisible]="3" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions">
+            <ng-template let-images pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content">
+                        <div class="image_div">
+                            <img src="{{imageBaseurl +'section_fifth_image/'+images.image}}" alt="" class="product-image" />
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </section>
+</div>

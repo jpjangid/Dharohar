@@ -1,0 +1,181 @@
+.all_section {
+    .stories_section {
+        padding: 30px 45px 30px 45px;
+        .story_content {
+            padding: 0 15px;
+        }
+        .dropdown_section {
+            .dropdown_div {
+                padding: 0 15px;
+                width: calc(100% / 3);
+            }
+            select {
+                width: 100%;
+                height: 30px;
+                padding: 0 0.75rem;
+                box-shadow: none;
+                // border: 1px solid #6f6e6e;
+                color: #6f6e6e;
+                border-radius: 0;
+                &:focus {
+                    color: #6f6e6e;
+                    box-shadow: none;
+                    border: 1px solid #6f6e6e;
+                }
+            }
+        }
+        .story_card {
+            .multi_cards {
+                position: sticky;
+                top: 150px;
+                margin-bottom: 30px;
+                width: calc(100% / 3);
+                padding: 0 15px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .story_image {
+                    height: 323px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .story_card_content {
+                    p {
+                        padding: 30px 0;
+                        background: white;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1199px) { 
+    .all_section {
+        .stories_section {
+            .story_card {
+                .multi_cards { 
+                    top: 150px;
+                    .story_image {
+                        height: 285px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1024px) {
+    .all_section {
+        .stories_section {
+            padding: 30px 37.5px 30px 37.5px!important;
+            .story_content {
+                padding: 0 7.5px;
+            }
+            .story_card {
+                .multi_cards { 
+                    top: 105px;
+                    padding: 0 7.5px;
+                }
+            }
+            .dropdown_section {
+                .dropdown_div {
+                    padding: 0 7.5px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .all_section {
+        .stories_section {
+            .story_card {
+                .multi_cards { 
+                    margin-bottom: 15px;
+                    .story_image {
+                        height: 235px;
+                    }
+                    .story_card_content {
+                        p {
+                            padding: 15px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 850px) {
+    .all_section {
+        .stories_section {
+            .story_card {
+                .multi_cards { 
+                    .story_image {
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .all_section {
+        .stories_section {
+            padding: 30px 22.5px 30px 22.5px!important;
+            .dropdown_section {
+                .dropdown_div {
+                    width: calc(100% / 2);
+                }
+            }
+            .story_card {
+                .multi_cards {
+                    top: 75px;
+                    width: calc(100% / 2);
+                    .story_image {
+                        height: 256px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 425px) {
+    .all_section {
+        .stories_section {
+            .dropdown_section {
+                .dropdown_div {
+                    width: 100%;
+                    &:nth-child(2) {
+                        margin-top: 15px;
+                    }
+                }
+            }
+            .story_card {
+                .multi_cards {
+                    top: 90px;
+                    &:first-child {
+                        margin-top: 30px;
+                    }
+                    width: 100%;
+                    .story_image {
+                        height: 290px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 350px) {
+    .all_section {
+        .stories_section {
+            .story_card {
+                .multi_cards {
+                    .story_image {
+                        height: 215px;
+                    }
+                }
+            }
+        }
+    }
+}

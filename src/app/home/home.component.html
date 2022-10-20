@@ -2,37 +2,55 @@
     <!-- static section start -->
     <section class="static_section">
         <div class="row static_row m-0">
-            <div class="col-lg-7 col-md-7 col-sm-7 col-12 content_col">
+            <!-- <div class="col-lg-7 col-md-7 col-sm-7 col-12 content_col">
                 <p class="static_content">
                     Building resilient communities of lifelong learners
                 </p>
                 <p class="btn visit_btn">Explore</p>
+            </div> -->
+            <div class="col-12 map_col p-0">
+                <img src="{{image_baseurl}}banner_image/{{bannerImage}}" alt="">
+                <p class="absolute_content para_family">Udaipur</p>
             </div>
-            <div class="col-lg-5 col-md-5 col-sm-5 col-12 map_col p-0">
-                <img src="./../../assets/map.png" alt="">
-            </div>
+            <!-- <div class="content_section">
+                <p class="m-0">
+                    Building resilient communities of lifelong learners
+                </p>
+            </div> -->
         </div>
     </section>
     <!-- static section end -->
     
     <!-- cards section start -->
     <section class="card_section">
-        <div class="container-fluid">
+        <div class="container-fluid p-0 m-0">
             <div class="section_content">
-                <p class="section_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime facilis vel tenetur
-                    nam mollitia voluptas blanditiis ipsum dolor sit amet consectetur</p>
-                <div class="dot_man1">
+                <p class="section_text m-0 para_family">{{cardsHeadSection.text_content}}</p>
+                <!-- <div class="dot_man1">
                     <img src="./../../assets/dot man 1.png" alt="" width="100%" height="100%">
-                </div>
+                </div> -->
                 <div class="dot_man2">
-                    <img src="./../../assets/dot man 2.png" alt="" width="100%" height="100%">
+                    <img src="{{image_baseurl}}section_second_image/{{cardsHeadSection.image}}" alt="" width="100%" height="100%">
                 </div>
             </div>
             <div class="row nav_link_cards m-0">
                 <ng-container *ngFor="let item of cardArray; index as index">
                     <!-- <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3" [ngClass]="{'cards_area0': !cardAnimation , 'animated_card0' : cardAnimation}"> -->
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3">
-                        <app-project-card [projectCardData]="item"></app-project-card>
+                    <div class="project_card">
+                        <!-- <app-project-card [projectCardData]="item"></app-project-card> -->
+                        <div [ngClass]="'card_box'">
+                            <div class="card_image">
+                                <img src="{{image_baseurl}}section_third_image/{{item.image}}" alt="">
+                            </div>
+                            <div class="card_content">
+                                <p class="card_heading m-0 heading_family">{{item.heading}}</p>
+                                <p class="card_text m-0 para_family">{{item.text_content}}</p>
+                                
+                                <div class="design_section" *ngIf="index==0" style="background:#ffca05"></div>
+                                <div class="design_section" *ngIf="index==1" style="background:#f26f21"></div>
+                                <div class="design_section" *ngIf="index==2" style="background:#e21f26"></div>
+                            </div>
+                        </div>
                     </div>
                 </ng-container>
             </div>
@@ -42,35 +60,35 @@
     
     <!-- gallery section start -->
     <section class="gallery_section">
-        <div class="container">
+        <div class="gallery_container no-gutters p-0">
             <div class="gallery_heading">
-                <p class="heading">Gallery</p>
+                <p class="heading heading_family">{{gallerySection[0]?.heading}}</p>
             </div>
             <div class="gallery_img">
-                <div class="row m-0">
-                    <div class="col-lg-6 col-md-6 col-12 p-1 banner_img">
-                        <img src="./.././../assets/gallery1.jpeg" alt="" width="100%" height="100%">
-                        <p>Lorem ipsum dolor sit</p>
+                <div class="row m-0 gallery_row">
+                    <div class="banner_img">
+                        <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[1]?.image}}" alt="" width="100%" height="100%">
+                        <!-- <p>Lorem ipsum dolor sit</p> -->
                     </div>
-                    <div class="col-lg-6 col-md-6 col-12 p-0 bulk_images">
-                        <div class="row m-0">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-6 p-1 images">
-                                <img src="./.././../assets/gallery2.jpeg" alt="" width="100%" height="100%">
-                                <p>Lorem ipsum</p>
+                    <div class="bulk_images">
+                        <div class="images_row row m-0">
+                            <div class="images">
+                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[2]?.image}}" alt="" width="100%" height="100%">
+                                <!-- <p>Lorem ipsum</p> -->
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-6 p-1 images">
-                                <img src="./.././../assets/gallery3.jpeg" alt="" width="100%" height="100%">
-                                <p>Lorem ipsum</p>
+                            <div class="images">
+                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[3]?.image}}" alt="" width="100%" height="100%">
+                                <!-- <p>Lorem ipsum</p> -->
                             </div>
                         </div>
-                        <div class="row m-0">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-6 p-1 images">
-                                <img src="./.././../assets/gallery4.jpeg" alt="" width="100%" height="100%">
-                                <p>Lorem ipsum</p>
+                        <div class="images_row row m-0">
+                            <div class="images">
+                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[4]?.image}}" alt="" width="100%" height="100%">
+                                <!-- <p>Lorem ipsum</p> -->
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-6 p-1 images">
-                                <img src="./.././../assets/image1.jpeg" alt="" width="100%" height="100%">
-                                <p>Lorem ipsum</p>
+                            <div class="images">
+                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[5]?.image}}" alt="" width="100%" height="100%">
+                                <!-- <p>Lorem ipsum</p> -->
                             </div>
                         </div>
                     </div>
@@ -79,110 +97,109 @@
         </div>
     </section>
     <!-- gallery section end -->
-    
-    <!-- who we are section start -->
-    <section class="who_we_are_section">
-        <div class="container">
-            <div class="row m-0 section_row">
-                <div class="col-md-3 col-12 section_col1">
-                </div>
-                <div class="col-md-9 col-12 section_col2">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-5 col-12">
-                            <div class="dotman_img">
-                                <img src="./../../assets/dot man 3.png" alt="" width="100%" height="100%">
+    <ng-container *ngFor="let item of absoluteSection; index as index;">
+        <!-- who we are section start -->
+        <section *ngIf="index%2 == 0" [ngClass]="{ who_we_are_section: !(index==absoluteSection?.length-1), volunteering_section: (index==absoluteSection?.length-1)}">
+            <div [ngClass]="{ who_we_are_container: !(index==absoluteSection?.length-1), volunteering_section_container: (index==absoluteSection?.length-1)}">
+                <div class="row m-0 section_row">
+                    <div class="section_col1">
+                    </div>
+                    <div class="section_col2 p-0">
+                        <div class="d-flex absolute_section m-0">
+                            <div class="">
+                                <div class="dotman_img">
+                                    <img src="{{image_baseurl}}section_fifth_image_short/{{item.sort_image}}" alt="" width="100%" height="100%">
+                                </div>
+                                <div class="section_image">
+                                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}" alt="" width="100%" height="100%">
+                                </div>
                             </div>
-                            <div class="section_image">
-                                <img src="./../../assets/Who we are.jpg" alt="" width="100%" height="100%">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-7 col-12">
-                            <div class="who_we_are_heading">
-                                <h2>Who we are</h2>
-                                <p class="who_we_are_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                    Ipsum quaerat aspernatur vel qui inventore, quisquam eveniet sint ipsa.
-                                    Quaerat laborum quisquam corporis necessitatibus mollitia. Odit sit
-                                    aliquam sint possimus omnis?</p>
-                                <p class="btn visit_btn">Explore</p>
+                            <div class="contect_section p-0">
+                                <div class="who_we_are_heading">
+                                    <div class="heading_content">
+                                        <h2 class="heading_family">{{item.heading}}</h2>
+                                        <p class="who_we_are_content para_family">{{item.text_content}}
+                                            <img src="./../../assets/yellow arrow.png" alt="">
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="section_image_absolute">
+                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}" alt="" width="100%" height="100%">
+                </div>
             </div>
-            <div class="section_image_absolute">
-                <img src="./../../assets/Who we are.jpg" alt="" width="100%" height="100%">
-            </div>
-        </div>
-    </section>
-    <!-- who we are section end -->
-    
-    <!-- our history section start -->
-    <section class="our_history_section">
-        <div class="container">
-            <div class="row m-0 section_row">
-                <div class="col-md-9 col-12 section_col2 pr-md-0">
-                    <div class="row m-0 main_content">
-                        <div class="col-lg-6 col-md-7 col-12">
-                            <div class="who_we_are_heading">
-                                <h2>Our history</h2>
-                                <p class="who_we_are_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                    Ipsum quaerat aspernatur vel qui inventore, quisquam eveniet sint ipsa.
-                                    Quaerat laborum quisquam corporis necessitatibus mollitia. Odit sit
-                                    aliquam sint possimus omnis?</p>
-                                <p class="btn visit_btn">Explore</p>
+        </section>
+        <!-- who we are section end -->
+        
+        <!-- our history section start -->
+        <section *ngIf="index%2 != 0" class="our_history_section">
+            <div class="our_history_section_container">
+                <div class="m-0 section_row">
+                    <div class="section_col2 pr-md-0">
+                        <div class="d-flex justify-content-between m-0 main_content">
+                            <div class="contect_section">
+                                <div class="who_we_are_heading">
+                                    <h2 class="heading_family">Our history</h2>
+                                    <p class="who_we_are_content para_family">We as individuals must step up and take charge. We must realise that each citizen has a role to play, and as we contribute, we grow and benefit. Even if we fail, we learn, we stand again which is the greatest evidence of resilient behaviour.
+                                        <img src="./../../assets/red arrow.png" alt="">
+                                    </p>
+                                    <!-- <p class="btn visit_btn">Explore</p> -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-5 col-12 pr-md-0">
-                            <div class="dotman_img">
-                                <img src="./../../assets/dot man 4.png" alt="" width="100%" height="100%">
-                            </div>
-                            <div class="section_image">
-                                <img src="./../../assets/Our history.jpg" alt="" width="100%" height="100%">
+                            <div class="pr-md-0">
+                                <div class="dotman_img">
+                                    <img src="{{image_baseurl}}section_fifth_image_short/{{item.sort_image}}" alt="" width="100%" height="100%">
+                                </div>
+                                <div class="section_image">
+                                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}" alt="" width="100%" height="100%">
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-3 col-12 section_col1"></div>
                 </div>
-                <div class="col-md-3 col-12 section_col1"></div>
+                <div class="section_image_absolute">
+                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}" alt="" width="100%" height="100%">
+                </div>
             </div>
-            <div class="section_image_absolute">
-                <img src="./../../assets/Our history.jpg" alt="" width="100%" height="100%">
-            </div>
-        </div>
-    </section>
-    <!-- our history section end -->
+        </section>
+        <!-- our history section end -->
+    </ng-container>
     
     <!-- volunteering section start -->
-    <section class="volunteering_section">
-        <div class="container">
-            <div class="row m-0 section_row">
-                <div class="col-md-3 col-12 section_col1"></div>
-                <div class="col-md-9 col-12 section_col2 pl-md-0">
-                    <div class="row m-0">
-                        <div class="col-lg-6 col-md-5 col-12 pl-md-0">
+    <!-- <section class="volunteering_section">
+        <div class="volunteering_section_container">
+            <div class="m-0 section_row">
+                <div class="section_col1"></div>
+                <div class="section_col2 pl-md-0">
+                    <div class="d-flex absolute_section m-0">
+                        <div class="pl-md-0">
                             <div class="dotman_img">
-                                <img src="./../../assets/dot man 5.png" alt="" width="100%" height="100%">
+                                <img src="./../../assets/home_page_png/Volunteering.png" alt="" width="100%" height="100%">
                             </div>
                             <div class="section_image">
-                                <img src="./../../assets/Volunteering.jpg" alt="" width="100%" height="100%">
+                                <img src="./../../assets/home_page/Volunteers.jpg" alt="" width="100%" height="100%">
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-7 col-12">
+                        <div class="contect_section">
                             <div class="who_we_are_heading">
-                                <h2>Volunteering</h2>
-                                <p class="who_we_are_content">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                    Ipsum quaerat aspernatur vel qui inventore, quisquam eveniet sint ipsa.
-                                    Quaerat laborum quisquam corporis necessitatibus mollitia. Odit sit
-                                    aliquam sint possimus omnis?</p>
-                                <p class="btn visit_btn">Explore</p>
+                                <h2 class="heading_family">Volunteering</h2>
+                                <p class="who_we_are_content para_family">Resilient communities share stories, and experiences. They are formed when we work together on something hard. So, whether it’s planting a million trees, or teaching teenagers to debate, we create structured opportunities for people to volunteer.
+                                    <img src="./../../assets/orange arrow.png" alt="">
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="section_image_absolute">
-                <img src="./../../assets/Volunteering.jpg" alt="" width="100%" height="100%">
+                <img src="./../../assets/home_page/Volunteers.jpg" alt="" width="100%" height="100%">
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- volunteering section end -->
 </div>
+

@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api_baseurl: "https://brandtalks.in/dharoharbackend/api",
+  image_baseurl : "https://brandtalks.in/dharoharbackend/storage/"
 };
 
 /*
