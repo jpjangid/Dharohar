@@ -19,7 +19,7 @@
                 padding-right: 30px;
                 
                 p {
-                    padding-bottom:15px;
+                    padding-bottom:15px!important;
                     // font-size: 20px;
                     font-family: kohinoorlight;
                 }
@@ -110,6 +110,11 @@
         width: fit-content;
         margin: 0;
         box-shadow: none;
+    }
+
+    .p-carousel .p-carousel-content .p-carousel-prev:enabled:hover,
+    .p-carousel .p-carousel-content .p-carousel-next:enabled:hover {
+        background: transparent;
     }
 
     .p-carousel-container {

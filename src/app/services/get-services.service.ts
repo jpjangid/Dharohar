@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -9,17 +10,18 @@ export class GetServicesService {
 
   constructor(private http:HttpClient) { }
   baseURL = environment.api_baseurl;
+  language = new BehaviorSubject<any>('en');
 
-  getHomePageData() {
-    return this.http.get(this.baseURL+'/home');
-  }
+  // getHomePageData() {
+  //   return this.http.get(this.baseURL+'/home');
+  // }
 
   getPageData(endpoint:any) {
-    return this.http.get(this.baseURL+endpoint)
+    return this.http.get(this.baseURL+ endpoint)
   }
 
-  getNavLinks() {
-    return this.http.get(this.baseURL+'/menu')
+  postFormData(data : any, endpoint : any) {
+    return this.http.post(this.baseURL+'/'+endpoint, data);
   }
 
 }

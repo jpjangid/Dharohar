@@ -25,7 +25,7 @@
     <section class="card_section">
         <div class="container-fluid p-0 m-0">
             <div class="section_content">
-                <p class="section_text m-0 para_family">{{cardsHeadSection.text_content}}</p>
+                <p class="section_text m-0 para_family" [innerHTML]="cardsHeadSection.text_content"></p>
                 <!-- <div class="dot_man1">
                     <img src="./../../assets/dot man 1.png" alt="" width="100%" height="100%">
                 </div> -->
@@ -44,7 +44,7 @@
                             </div>
                             <div class="card_content">
                                 <p class="card_heading m-0 heading_family">{{item.heading}}</p>
-                                <p class="card_text m-0 para_family">{{item.text_content}}</p>
+                                <p class="card_text m-0 para_family" [innerHTML]="item.text_content"></p>
                                 
                                 <div class="design_section" *ngIf="index==0" style="background:#ffca05"></div>
                                 <div class="design_section" *ngIf="index==1" style="background:#f26f21"></div>
@@ -118,9 +118,9 @@
                                 <div class="who_we_are_heading">
                                     <div class="heading_content">
                                         <h2 class="heading_family">{{item.heading}}</h2>
-                                        <p class="who_we_are_content para_family">{{item.text_content}}
-                                            <img src="./../../assets/yellow arrow.png" alt="">
+                                        <p class="who_we_are_content para_family" [innerHTML]="item.text_content">
                                         </p>
+                                        <img src="./../../assets/yellow arrow.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -142,10 +142,10 @@
                         <div class="d-flex justify-content-between m-0 main_content">
                             <div class="contect_section">
                                 <div class="who_we_are_heading">
-                                    <h2 class="heading_family">Our history</h2>
-                                    <p class="who_we_are_content para_family">We as individuals must step up and take charge. We must realise that each citizen has a role to play, and as we contribute, we grow and benefit. Even if we fail, we learn, we stand again which is the greatest evidence of resilient behaviour.
-                                        <img src="./../../assets/red arrow.png" alt="">
+                                    <h2 class="heading_family">{{item.heading}}</h2>
+                                    <p class="who_we_are_content para_family" [innerHTML]="item.text_content">
                                     </p>
+                                    <img src="./../../assets/red arrow.png" alt="">
                                     <!-- <p class="btn visit_btn">Explore</p> -->
                                 </div>
                             </div>

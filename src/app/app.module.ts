@@ -14,8 +14,13 @@ import { ProgrammerComponent } from './programmer/programmer.component';
 import {CarouselModule} from 'primeng/carousel';
 import { ContactComponent } from './contact/contact.component';
 import { StoriesComponent } from './stories/stories.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { AppInterceptor } from './app.interceptor';
+import {ToastModule} from 'primeng/toast';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TemplatesComponent } from './templates/templates.component';
 
 
 @NgModule({
@@ -24,7 +29,8 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     OverviewComponent,
     ProgrammerComponent,
     ContactComponent,
-    StoriesComponent
+    StoriesComponent,
+    TemplatesComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +44,11 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
     RouterModule,
     CarouselModule,
     HttpClientModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

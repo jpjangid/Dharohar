@@ -8,6 +8,7 @@
             <div class="dropdown_div">
                 <select name="dropdown" class="form-control" id="dropdown"  (change)="getFilterValue($event, 'category')">
                     <option disabled selected>Select Filter</option>
+                    <option value="0">Reset Filter</option>
                     <ng-container *ngFor="let item of filterCategory">
                         <option [value]="item.id">{{item.category_title}}</option>
                     </ng-container>
@@ -16,6 +17,7 @@
             <div class="dropdown_div">
                 <select name="dropdown" class="form-control" id="dropdown" (change)="getFilterValue($event, 'subcategory')">
                     <option disabled selected>Select Filter</option>
+                    <option value="0">Reset Filter</option>
                     <ng-container *ngFor="let item of filterSubCategory">
                         <option [value]="item.id">{{item.sub_category_title}}</option>
                     </ng-container>
@@ -23,8 +25,9 @@
             </div>
         </div>
         <div class="row m-0 story_card">
-            <ng-container *ngFor="let item of listContent; index as index">
-                <div class="multi_cards">
+            <ng-container *ngFor="let item of listContent; index as index;" style="box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);">
+                <!-- {{scrollVariable}} -->
+                <div class="multi_cards" (click)="routeToDetail(item.url)">
                     <div class="story_image">
                         <img src="{{imageBaseurl+'section_third_list_image/'+item.image}}" alt="">
                     </div>

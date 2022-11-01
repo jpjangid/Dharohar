@@ -1,3 +1,23 @@
+<p-toast></p-toast>
+<p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+    <ng-template let-message pTemplate="message">
+        <div class="flex flex-column" style="flex: 1">
+            <div class="text-center">
+                <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+                <h4>{{message.summary}}</h4>
+                <p>{{message.detail}}</p>
+            </div>
+            <div class="grid p-fluid">
+                <div class="col-6">
+                    <button type="button" pButton (click)="onConfirm()" label="Yes" class="p-button-success"></button>
+                </div>
+                <div class="col-6">
+                    <button type="button" pButton (click)="onReject()" label="No" class="p-button-secondary"></button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-toast>
 <div class="all_section">
     <app-breadcrumb-banner [bannerData]="bannerData"></app-breadcrumb-banner>
     <section class="contact_section">
@@ -6,31 +26,48 @@
         </div>
         <div class="form_row">
             <div class="contact_form">
-                <form>
-                    <div>
+                <form [formGroup]="contactFormData" (ngSubmit)="postDataForm(contactForm)" #contactForm="ngForm">
+                    <div class="parentSection">
                         <label for="name">Name</label>
-                        <input type="text" name="name" id="name" class="form-control">
+                        <input type="text" [class.is-invalid]="(contactForm.submitted && contactFormData.get('name')?.invalid) || (contactFormData.get('name')?.touched && contactFormData.get('name')?.invalid)" formControlName="name" id="name" class="form-control" required>
+                        <div class="invalid-feedback m-0"> Name is Required </div>
                     </div>
-                    <div>
+                    <div class="parentSection">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control">
+                        <input type="email" [class.is-invalid]="(contactForm.submitted && contactFormData.get('email')?.invalid) || (contactFormData.get('email')?.touched && contactFormData.get('email')?.invalid)" formControlName="email" id="email" class="form-control" required>
+                        <div class="invalid-feedback m-0"> Email is Required </div>
                     </div>
-                    <div>
+                    <div class="parentSection">
                         <label for="subject">Subject</label>
-                        <input type="text" name="subject" id="subject" class="form-control">
+                        <select [class.is-invalid]="(contactForm.submitted && contactFormData.get('subject')?.invalid) || (contactFormData.get('subject')?.touched && contactFormData.get('subject')?.invalid)" formControlName="subject" class="form-control" id="dropdown" required>
+                            <!-- <option disabled selected>Select Subject</option> -->
+                            <ng-container *ngFor="let item of subjectOptions">
+                                <option [value]="item.subject_english">{{item.subject_english}}</option>
+                                <!-- <option [value]="item.subject_hindi">{{item.subject_hindi}}</option> -->
+                            </ng-container>
+                        </select>
+                        <div class="invalid-feedback m-0"> Subject is Required </div>
+                        <!-- <input type="text" name="subject" id="subject" class="form-control"> -->
                     </div>
                     <div>
                         <label for="message">Message</label>
-                        <textarea name="message" id="message" class="form-control"></textarea>
+                        <textarea formControlName="message" id="message" class="form-control"></textarea>
                     </div>
                     <div class="text-right mt-30 send_btn">
-                        <img src="./../../assets/send button.png" alt="">
+                        <button type="submit" class="submit_btn">
+                            <img src="./../../assets/send button.png" alt="">
+                        </button>
                     </div>
                 </form>
             </div>
             <div class="iframe_row">
-                <div [innerHTML]="iFrame"></div>
-                <p class="para_family" style="margin-top: 24px;" [innerText]="address"></p>
+                <!-- <ng-container *ngIf="iFrame">
+                    <div [innerHTML]="iFrame"></div>
+                </ng-container>
+                <ng-container *ngIf="!iFrame"> -->
+                    <iframe _ngcontent-duf-c17="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.3247671726594!2d73.73802281431406!3d24.577985662575102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5e430702cff%3A0x6fb1d5f6cffdebbb!2sSecure%20Meters%20Ltd!5e0!3m2!1sen!2sin!4v1665121849501!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border: 0; margin: 0; padding: 0;"></iframe>
+                <!-- </ng-container> -->
+                <p *ngIf="address" class="para_family" style="margin-top: 24px;" [innerText]="address"></p>
             </div>
         </div>
     </section>

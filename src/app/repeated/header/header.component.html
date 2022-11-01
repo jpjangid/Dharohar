@@ -2,8 +2,8 @@
 <section [ngClass]="{ header_section: false, header_section1: true}" id="header">
     <!-- Header Logo Section Start -->
     <div class="head_logo">
-        <div class="web_logo" (click)="navigate('/')">
-            <img src="../../../assets/logo.png" alt="" width="100%" height="100%">
+        <div class="web_logo" (click)="navigate('home')">
+            <img src="{{img_baseURL}}logo.png" alt="" width="100%" height="100%">
         </div>
     </div>
     <!-- Header Logo Section End -->
@@ -15,19 +15,34 @@
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="nav_link para_family">
-                    <span>English</span><i class="fa fa-angle-down" style="padding-left:10px;"></i>
-                    <!-- <select name="" id="" class="form-control">
-                        <option selected>English</option>
-                        <option value="">Hindi</option>
+                <!-- <div class="nav_link para_family" (click)="changeLanguage()"> -->
+                    <!-- <select name="" id="">
+                        <option value="hi">Hindi</option>
+                        <option value="en">English</option>
                     </select> -->
+                    <!-- <div *ngIf="langCheck"><span>English</span><i class="fa fa-angle-down" style="padding-left:10px;"></i></div>
+                    <div *ngIf="!langCheck"><span>Hindi</span><i class="fa fa-angle-up" style="padding-left:10px;"></i></div> -->
+                    <select name="language" class="form-control" style="cursor: pointer;" [(ngModel)]="language" (change)="getLanguage($event)">
+                        <option selected value="en"><span>English</span><i class="fa fa-angle-down" style="padding-left:10px;"></i></option>
+                        <option value="hi">Hindi</option>
+                    </select>
                     
                     <!-- <p-dropdown [options]="language" [(ngModel)]="language" optionLabel="name" optionDisabled="inactive"></p-dropdown> -->
                 </div>
             </div>
             <ul class="unOrderNavLinks">
                 <ng-container *ngFor="let item of navLinks">
-                    <li class="nav_link para_family" (click)="navigate(item.slug_eng)">
-                        {{item.title_eng}}
+                    <li class="nav_link para_family navigation_menus">
+                        <span (click)="navigate(item.slug_eng)">{{item.title_eng}}</span>
+                        <ng-container *ngIf="item.subpage?.length>0">
+                            <ul class="unOrderSubNavLinks">
+                                <ng-container *ngFor="let submenu of item.subpage">
+                                    <li class="sub_nav_link para_family" (click)="navigate(submenu.slug_eng)">
+                                        {{submenu.title_eng}}
+                                    </li>
+                                </ng-container>
+                            </ul>
+                        </ng-container>
                     </li>
                 </ng-container>
             </ul>
@@ -49,8 +64,17 @@
         </div>
         <div class="open-menu" *ngIf="openMenu">
             <ul class="responsive-menu">
-                <li class="nav_link para_family" *ngFor="let item of navLinks" (click)="navigate(item.path)">
-                    {{item.name}}
+                <li class="nav_link para_family" *ngFor="let item of navLinks">
+                    <span (click)="navigate(item.slug_eng)">{{item.title_eng}}</span><i *ngIf="item.subpage?.length>0" (click)="openSubmenus()" class="fa fa-angle-down" style="margin-left:15px;"></i>
+                    <ng-container *ngIf="item.subpage?.length>0">
+                        <ul *ngIf="submenuCheck" class="unOrderSubNavLinks" style="list-style: none;padding-left: 15px;">
+                            <ng-container *ngFor="let submenu of item.subpage">
+                                <li class="sub_nav_link para_family" (click)="navigate(submenu.slug_eng)">
+                                    {{submenu.title_eng}}
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </ng-container>
                 </li>
             </ul>
         </div>

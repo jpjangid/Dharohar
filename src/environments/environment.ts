@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   api_baseurl: "https://brandtalks.in/dharoharbackend/api",
-  image_baseurl : "https://brandtalks.in/dharoharbackend/storage/"
+  image_baseurl : "https://brandtalks.in/dharoharbackend/storage/",
+  asset_baseURL : "https://brandtalks.in/dharoharfrontend/assets/"
 };
 
 /*

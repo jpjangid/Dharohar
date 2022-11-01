@@ -1,0 +1,18 @@
+<div *ngIf="_utility.valueLoader" style="height: 100vh;"></div>
+<!-- <app-header></app-header> -->
+<ng-container *ngIf="template_id == 2">
+    <app-contact [contactData]="contactData"></app-contact>
+</ng-container>
+<ng-container *ngIf="template_id == 4">
+    <app-overview [detailData]="detailData"></app-overview>
+</ng-container>
+<ng-container *ngIf="template_id == 3">
+    <app-programmer [programsData]="programsData"></app-programmer>
+</ng-container>
+<ng-container *ngIf="template_id == 5">
+    <app-stories [listData]="listData"></app-stories>
+</ng-container>
+<ng-container *ngIf="template_id == 1">
+    <app-home [homeData]="homeData"></app-home>
+</ng-container>
+<!-- <app-footer></app-footer> -->

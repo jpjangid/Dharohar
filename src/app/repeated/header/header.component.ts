@@ -1,11 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GetServicesService } from 'src/app/services/get-services.service';
-
-// interface language {
-//   name: string,
-//   code: string
-// }
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -14,59 +10,56 @@ import { GetServicesService } from 'src/app/services/get-services.service';
 })
 
 export class HeaderComponent implements OnInit {
-  navLinks:any=[];
-  // language: language[];
-  // selectedCity: language | any;
-  openMenu:Boolean=false;
-  constructor( private route : Router, private getService : GetServicesService ) {
-  //   this.language = [
-  //     {name: 'English', code: 'eng'},
-  //     {name: 'Hindi', code: 'hi'},
-  //     {name: 'Sanskrit', code: 'san'}
-  // ];
-  }
+  navLinks: any = [];
+  langCheck:boolean = true;
+  language:any = 'en';
+  submenuCheck:boolean = false;
+  img_baseURL = environment.asset_baseURL;
+  openMenu: Boolean = false;
+  constructor(private route: Router, private getService: GetServicesService , private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.navLinks=[
-    //   {name:"Overview", path:'list-page'},
-    //   {name:"Third space", path:'/'},
-    //   {name:"10 lakh vriksh", path:'/'},
-    //   {name:"Sanskriti", path:'programmes'},
-    //   {name:"Stories", path:'detail-page'},
-    //   {name:"Contact", path:'contact-us'}
-    // ]
-    console.log(this.navLinks)
-    this.getService.getNavLinks().subscribe((res:any)=> {
+    this.slug = this.activatedRoute.snapshot;
+    this.language = this.slug?._routerState?.url?.slice(1,3);
+    console.log(this.language,this.slug);
+    this.getService.getPageData('/en'+'/menu').subscribe((res: any) => {
       console.log(res)
-      this.navLinks = res.menu.menus;
+      this.navLinks = res?.menu?.menus;
     })
   }
-  // Trigger for navbar on mobile screen
+  
   openmenu() {
-    this.openMenu=!this.openMenu
+    this.openMenu = !this.openMenu
   }
-  scrolled: boolean = false;
-  header:any;
-    @HostListener("window:scroll", [])
-    onWindowScroll() {
-      // console.log("hello");
-        this.scrolled = window.scrollY > 400;
-        // this.header = document.getElementById('header')
-        // if(window.scrollY >= 400) {
-        //   this.scrolled=true
-        //   this.header.classList.add("header_section");
-        // }
-        // else {
-        //   this.scrolled=false
-        //   this.header.classList.remove("header_section");
-        // }
-    }
 
-    navigate(string:any) {
-      this.route.navigateByUrl(string);
-      if(this.openMenu==true) {
-        this.openMenu=false
-      }
-      window.scroll(0,0)
+  navigate(slug?: any) {
+    console.log(this.language)
+    this.route.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.route.onSameUrlNavigation = 'reload';
+    this.route.navigate([this.language + '/' + (slug != null ? slug : 'home')]);
+    if (this.openMenu == true || this.submenuCheck == true) {
+      this.openMenu = false;
+      this.submenuCheck = false;
     }
+    window.scroll(0, 0)
+    this.getSlug();
+  }
+
+  changeLanguage() {
+    this.langCheck = !this.langCheck
+  }
+
+  openSubmenus() {
+    this.submenuCheck = !this.submenuCheck;
+  }
+
+  getLanguage(event:any) {
+    console.log(event?.target.value);
+    this.getSlug();
+  }
+  slug:any;
+  getSlug() {
+    this.slug = this.activatedRoute.snapshot;
+    console.log();
+  }
 }

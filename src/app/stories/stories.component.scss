@@ -26,13 +26,18 @@
         }
         .story_card {
             .multi_cards {
+                cursor: pointer;
                 position: sticky;
                 top: 150px;
-                margin-bottom: 30px;
+                // margin-bottom: 30px;
                 width: calc(100% / 3);
-                padding: 0 15px;
+                padding: 30px 15px 0px 15px;
+                background: white;
                 &:last-child {
                     margin-bottom: 0;
+                }
+                &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                    padding: 0 15px;
                 }
                 .story_image {
                     height: 323px;
@@ -76,7 +81,10 @@
             .story_card {
                 .multi_cards { 
                     top: 105px;
-                    padding: 0 7.5px;
+                    padding: 15px 7.5px 0px 7.5px;
+                    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                        padding: 0 7.5px;
+                    }
                 }
             }
             .dropdown_section {
@@ -92,7 +100,7 @@
         .stories_section {
             .story_card {
                 .multi_cards { 
-                    margin-bottom: 15px;
+                    // margin-bottom: 15px;
                     .story_image {
                         height: 235px;
                     }
@@ -132,6 +140,9 @@
                 .multi_cards {
                     top: 75px;
                     width: calc(100% / 2);
+                    &:nth-child(3) {
+                        padding-top: 15px;
+                    }
                     .story_image {
                         height: 256px;
                     }
@@ -153,9 +164,11 @@
             }
             .story_card {
                 .multi_cards {
-                    top: 90px;
+                    top: 60px;
+                    padding: 30px 7.5px 0 7.5px!important;
                     &:first-child {
-                        margin-top: 30px;
+                        top: 90px;
+                        padding-top: 0px!important;
                     }
                     width: 100%;
                     .story_image {

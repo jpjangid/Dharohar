@@ -6,34 +6,27 @@
         </div>
         <div class="both_section">
             <div class="content_section">
-                <ng-container *ngFor="let item of [].constructor(1)">
-                    <p class="light-color" [innerText]="programData.text_content"></p>
-                </ng-container>
+                <!-- <ng-container *ngFor="let item of [].constructor(1)"> -->
+                    <p class="light-color" [innerHTML]="programData.text_content"></p>
+                <!-- </ng-container> -->
             </div>
             <div class="images_section">
-                <ng-container *ngFor="let item of [].constructor(1)">
+                <!-- <ng-container *ngFor="let item of [].constructor(1)"> -->
                     <img src="{{programData.image}}" alt="">
-                </ng-container>
+                <!-- </ng-container> -->
             </div>
         </div>
         <div class="both_section_reponsive">
-            <ng-container *ngFor="let item of [].constructor(1)">
+            <!-- <ng-container *ngFor="let item of [].constructor(1)"> -->
                 <div class="content_section">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-                        sunt
-                        ullam blanditiis cum sit fugiat, praesentium tenetur modi ducimus et, obcaecati perferendis
-                        itaque
-                        laborum magni commodi rem sed possimus cupiditate! Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Illo quam nulla libero iste veritatis ipsum illum, accusamus deserunt nihil,
-                        iusto
-                        architecto earum excepturi ipsam tempore distinctio consectetur amet ducimus. Hic!</p>
+                    <p class="light-color" [innerHTML]="programData.text_content"></p>
                     <!-- </ng-container> -->
                 </div>
                 <div class="images_section">
                     <!-- <ng-container *ngFor="let item of [].constructor(3)"> -->
-                    <img src="./../../assets/gallery2.jpeg" alt="">
+                    <img src="{{programData.image}}" alt="">
                 </div>
-            </ng-container>
+            <!-- </ng-container> -->
         </div>
     </section>
     <section class="story_section">

@@ -1,3 +1,15 @@
+<!-- <ng-container *ngIf="!(utility.getLoader())">
+</ng-container> -->
+
+<!-- <div class="loading" *ngIf="utility.valueLoader">Loading&#8230;</div> -->
+<!-- <div class="dot-typing" >*ngIf="utility.valueLoader"</div> -->
+<!-- <div class="col-3" > -->
+<div class="snippet" *ngIf="utility?.valueLoader" data-title=".dot-typing">
+  <div class="stage">
+    <div class="dot-typing"></div>
+  </div>
+</div>
+<!-- </div> -->
 <app-header></app-header>
 <!-- <div style="margin-bottom: 150px;"></div> -->
 <router-outlet></router-outlet>
