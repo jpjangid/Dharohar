@@ -16,8 +16,8 @@ export class GetServicesService {
   //   return this.http.get(this.baseURL+'/home');
   // }
 
-  getPageData(endpoint:any) {
-    return this.http.get(this.baseURL+ endpoint)
+  getPageData(endpoint:any):Promise<any> {
+    return this.http.get(this.baseURL+ endpoint).toPromise();
   }
 
   postFormData(data : any, endpoint : any) {

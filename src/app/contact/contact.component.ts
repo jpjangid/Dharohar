@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { environment } from 'src/environments/environment';
 import { GetServicesService } from '../services/get-services.service';
@@ -21,11 +21,11 @@ export class ContactComponent implements OnInit {
   address: any;
   slug: any;
   subjectOptions: any;
-  constructor(private messageService: MessageService, private getService: GetServicesService, private sanitizer: DomSanitizer, private activeRoute: ActivatedRoute, private primengConfig: PrimeNGConfig) {
+  constructor(private messageService: MessageService, private getService: GetServicesService, private sanitizer: DomSanitizer, private activeRoute: ActivatedRoute, private primengConfig: PrimeNGConfig , private route : Router) {
     this.primengConfig.ripple = true;
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.contactData?.data?.forEach((response: any, index: any) => {
       if (response[0]?.section_name == 'banner') {
         this.bannerData.image = this.imageBaseurl + "banner_image/" + response[0]?.image;
@@ -42,7 +42,9 @@ export class ContactComponent implements OnInit {
         this.bannerData.breadCrumb.push(response[0].page_name);
       }
     });
-    this.getService.getPageData('/enquirysubject').subscribe((response: any) => {
+    let snapshot = this.route.url.slice(1,3);
+    console.log(snapshot);    
+    await this.getService.getPageData('/' + snapshot + '/enquirysubject').then((response: any) => {
       console.log(response);
       this.subjectOptions = response.data;
     })

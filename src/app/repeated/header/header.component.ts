@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { GetServicesService } from 'src/app/services/get-services.service';
 import { environment } from 'src/environments/environment';
 
@@ -11,23 +11,26 @@ import { environment } from 'src/environments/environment';
 
 export class HeaderComponent implements OnInit {
   navLinks: any = [];
-  langCheck:boolean = true;
-  language:any = 'en';
-  submenuCheck:boolean = false;
+  langCheck: boolean = true;
+  language: any;
+  submenuCheck: boolean = false;
   img_baseURL = environment.asset_baseURL;
   openMenu: Boolean = false;
-  constructor(private route: Router, private getService: GetServicesService , private activatedRoute: ActivatedRoute) { }
+  constructor(private route: Router, private getService: GetServicesService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.slug = this.activatedRoute.snapshot;
-    this.language = this.slug?._routerState?.url?.slice(1,3);
-    console.log(this.language,this.slug);
-    this.getService.getPageData('/en'+'/menu').subscribe((res: any) => {
+    this.route.events.subscribe(
+      (event: any) => {
+        if (event instanceof NavigationEnd) {
+          this.language = this.route.url.slice(1, 3)
+        }
+      });
+    this.getService.getPageData('/en' + '/menu').then((res: any) => {
       console.log(res)
       this.navLinks = res?.menu?.menus;
     })
   }
-  
+
   openmenu() {
     this.openMenu = !this.openMenu
   }
@@ -42,7 +45,6 @@ export class HeaderComponent implements OnInit {
       this.submenuCheck = false;
     }
     window.scroll(0, 0)
-    this.getSlug();
   }
 
   changeLanguage() {
@@ -53,13 +55,17 @@ export class HeaderComponent implements OnInit {
     this.submenuCheck = !this.submenuCheck;
   }
 
-  getLanguage(event:any) {
-    console.log(event?.target.value);
-    this.getSlug();
+  getLanguage(event: any) {
+    this.getSlug(event?.target.value);
   }
-  slug:any;
-  getSlug() {
-    this.slug = this.activatedRoute.snapshot;
-    console.log();
+
+  // slug: any;
+  getSlug(value: any) {
+    let snapshot: any;
+    console.log(this.route.url.slice(4 , this.route.url.length));
+    snapshot = this.route.url.slice(4 , this.route.url.length);
+    this.route.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.route.onSameUrlNavigation = 'reload';
+    this.route.navigate([this.language + '/' + (snapshot != null ? snapshot : 'home')]);
   }
 }

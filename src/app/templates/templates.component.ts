@@ -17,13 +17,15 @@ export class TemplatesComponent implements OnInit {
   listData: any;
   detailData: any;
   programsData: any;
-  constructor(private activatedRoute: ActivatedRoute, private getService: GetServicesService, private router: Router, public _utility: AppUtility) { }
+  constructor(private activatedRoute: ActivatedRoute, private getService: GetServicesService, private router: Router, public _utility: AppUtility) {
+    this._utility.loader(true);
+   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.slug = this.activatedRoute.snapshot;
     console.log(this.slug);
     // this.getService.language.subscribe((response: any) => {
-      this.getService.getPageData((this.slug._routerState.url)).subscribe((res: any) => {
+      await this.getService.getPageData((this.slug._routerState.url)).then((res: any) => {
         console.log(res);
         res?.data?.forEach((response: any, index: any) => {
           if (index == 0) {
@@ -46,6 +48,7 @@ export class TemplatesComponent implements OnInit {
           }
         });
       })
+      this._utility.loader(false);
     // })
     console.log(this.template_id)
   }

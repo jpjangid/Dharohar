@@ -16,14 +16,16 @@ export class AppInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    this._utility.valueLoader = true;
+    // this._utility.valueLoader = true;
     // alert(this._utility.valueLoader);
     request = request.clone({
       setHeaders: { 'Access-Control-Allow-Origin' : '*'}
     });
 
-    return next.handle(request).pipe(
-      finalize(() => this._utility.valueLoader = false),
-    );
+    return next.handle(request);
+
+    // return next.handle(request).pipe(
+    //   finalize(() => this._utility.valueLoader = false),
+    // );
   }
 }
