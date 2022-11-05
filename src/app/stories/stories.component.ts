@@ -75,13 +75,5 @@ export class StoriesComponent implements OnInit {
       this.route.navigate(['/'+prefix?.url[0]?.path+'/' + ((slug != null) ? slug : '')]);
     }
   }
-  scrollVariable : any = 1;
-  @HostListener("window:scroll", [])
-  async OnScroll() {
-    // console.log(window.scrollY, 450*this.scrollVariable)
-    if(window.scrollY>= (450*this.scrollVariable) && window.scrollY<=((450*this.scrollVariable)+1)) {
-      this.scrollVariable++;
-      console.log(this.scrollVariable)
-    }
-  }
+  
 }

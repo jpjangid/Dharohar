@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { GetServicesService } from '../services/get-services.service';
 
@@ -7,7 +7,7 @@ import { GetServicesService } from '../services/get-services.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit , OnChanges{
   @Input() homeData: any;
   cardArray: any = [];
   header: any;
@@ -16,7 +16,12 @@ export class HomeComponent implements OnInit {
   absoluteSection: any = []
   cardsHeadSection: any = {};
   image_baseurl = environment.image_baseurl;
+  asset_baseURL = environment.asset_baseURL;
   constructor(private getService: GetServicesService) { }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.homeData);
+    
+  }
 
   ngOnInit(): void {
     this.homeData?.data?.forEach((response: any) => {

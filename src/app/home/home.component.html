@@ -120,7 +120,8 @@
                                         <h2 class="heading_family">{{item.heading}}</h2>
                                         <p class="who_we_are_content para_family" [innerHTML]="item.text_content">
                                         </p>
-                                        <img src="./../../assets/yellow arrow.png" alt="">
+                                        <img *ngIf="index == 0" src="{{asset_baseURL}}yellow arrow.png" alt="">
+                                        <img *ngIf="index == 2" src="{{asset_baseURL}}orange arrow.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +146,7 @@
                                     <h2 class="heading_family">{{item.heading}}</h2>
                                     <p class="who_we_are_content para_family" [innerHTML]="item.text_content">
                                     </p>
-                                    <img src="./../../assets/red arrow.png" alt="">
+                                    <img src="{{asset_baseURL}}red arrow.png" alt="">
                                     <!-- <p class="btn visit_btn">Explore</p> -->
                                 </div>
                             </div>

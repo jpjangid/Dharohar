@@ -30,6 +30,7 @@ export class TemplatesComponent implements OnInit {
         res?.data?.forEach((response: any, index: any) => {
           if (index == 0) {
             this.template_id = response[0]?.template_id;
+            console.log(this.template_id);            
             if (this.template_id == 1) {
               this.homeData = res;
             }

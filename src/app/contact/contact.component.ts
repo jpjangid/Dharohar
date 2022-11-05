@@ -21,6 +21,7 @@ export class ContactComponent implements OnInit {
   address: any;
   slug: any;
   subjectOptions: any;
+  asset_url = environment.asset_baseURL;
   constructor(private messageService: MessageService, private getService: GetServicesService, private sanitizer: DomSanitizer, private activeRoute: ActivatedRoute, private primengConfig: PrimeNGConfig , private route : Router) {
     this.primengConfig.ripple = true;
   }

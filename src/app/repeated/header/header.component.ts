@@ -1,5 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 import { GetServicesService } from 'src/app/services/get-services.service';
 import { environment } from 'src/environments/environment';
 
@@ -16,7 +19,19 @@ export class HeaderComponent implements OnInit {
   submenuCheck: boolean = false;
   img_baseURL = environment.asset_baseURL;
   openMenu: Boolean = false;
-  constructor(private route: Router, private getService: GetServicesService, private activatedRoute: ActivatedRoute) { }
+  displayModal: boolean = false;
+  searchWord: any;
+  searchResult: any = []
+  searchWordUpdate = new Subject<string>();
+  constructor(private route: Router, private getService: GetServicesService, private activatedRoute: ActivatedRoute, private _sanitizer: DomSanitizer) {
+    this.searchWordUpdate.pipe(
+      debounceTime(500),
+      distinctUntilChanged())
+      .subscribe(value => {
+        console.log("value", value);
+        this.searchQuery(value);
+      });
+  }
 
   ngOnInit() {
     this.route.events.subscribe(
@@ -29,6 +44,24 @@ export class HeaderComponent implements OnInit {
       console.log(res)
       this.navLinks = res?.menu?.menus;
     })
+  }
+
+  searchQuery(value: any) {
+    let object = {
+      name: value
+    }
+    this.getService.postFormData(object, this.language + '/' + 'globalSearch').subscribe(
+      (res: any) => {
+        this.searchResult = res.data;
+        // this.searchResult?.forEach((res:any) => {
+        //   res.text_content = this._sanitizer.bypassSecurityTrustHtml(res.text_content);
+        // });
+        // console.log((res.data[3].text_content));
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error);
+        this.searchResult = []
+      })
   }
 
   openmenu() {
@@ -44,6 +77,7 @@ export class HeaderComponent implements OnInit {
       this.openMenu = false;
       this.submenuCheck = false;
     }
+    this.displayModal = false;
     window.scroll(0, 0)
   }
 
@@ -59,13 +93,18 @@ export class HeaderComponent implements OnInit {
     this.getSlug(event?.target.value);
   }
 
-  // slug: any;
   getSlug(value: any) {
     let snapshot: any;
-    console.log(this.route.url.slice(4 , this.route.url.length));
-    snapshot = this.route.url.slice(4 , this.route.url.length);
+    console.log(this.route.url.slice(4, this.route.url.length));
+    snapshot = this.route.url.slice(4, this.route.url.length);
     this.route.routeReuseStrategy.shouldReuseRoute = () => false;
     this.route.onSameUrlNavigation = 'reload';
     this.route.navigate([this.language + '/' + (snapshot != null ? snapshot : 'home')]);
+  }
+
+  showModalDialog() {
+    this.searchResult = [];
+    this.searchWord = '';
+    this.displayModal = true;
   }
 }

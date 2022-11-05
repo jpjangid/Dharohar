@@ -29,6 +29,7 @@ export class OverviewComponent implements OnInit {
       }
       if (response[0]?.section_name == 'section_two_content') {
         this.detailContent = response;
+        console.log(this.detailContent)
       }
       if (response[0]?.section_name == 'section_two_images') {
         this.detailImages = response;
