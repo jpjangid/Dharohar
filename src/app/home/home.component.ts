@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit , OnChanges{
   @Input() homeData: any;
   cardArray: any = [];
   header: any;
-  bannerImage: any;
+  bannerImage: any = {};
   gallerySection: any = []
   absoluteSection: any = []
   cardsHeadSection: any = {};
@@ -26,7 +26,9 @@ export class HomeComponent implements OnInit , OnChanges{
   ngOnInit(): void {
     this.homeData?.data?.forEach((response: any) => {
       if (response[0]?.section_name == 'banner') {
-        this.bannerImage = response[0]?.image;
+        this.bannerImage.bannerImage = response[0]?.image;
+        this.bannerImage.image_alt = response[0].image_alt;
+        this.bannerImage.image_title = response[0].image_title;
         console.log(this.bannerImage)
       }
       if (response[0]?.section_name == 'second_section') {

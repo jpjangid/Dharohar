@@ -35,7 +35,7 @@ export class StoriesComponent implements OnInit {
       if (response[0]?.section_name == 'second_section') {
         this.headContent = response[0]?.text_content;
       }
-      if (response[0]?.section_name == 'fifth_section') {
+      if (response[0]?.section_name == 'third_section') {
         this.listContent = response;
         this.copyListContent = Object.assign([], this.listContent);
       }

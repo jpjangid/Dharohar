@@ -1,6 +1,6 @@
 <div [ngClass]="'card_box'">
     <div class="card_image">
-        <img src="{{projectCardData.image}}" alt="">
+        <img src="{{projectCardData.image}}" [alt]="projectCardData.image_alt" [title]="projectCardData.image_title">
     </div>
     <div class="card_content">
         <p class="card_heading m-0">{{projectCardData.heading}}</p>

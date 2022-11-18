@@ -12,7 +12,7 @@
             </div>
             <div class="images_section">
                 <!-- <ng-container *ngFor="let item of [].constructor(1)"> -->
-                    <img src="{{programData.image}}" alt="">
+                    <img src="{{programData.image}}" [alt]="programData.image_alt" [title]="programData.image_title">
                 <!-- </ng-container> -->
             </div>
         </div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="images_section">
                     <!-- <ng-container *ngFor="let item of [].constructor(3)"> -->
-                    <img src="{{programData.image}}" alt="">
+                    <img src="{{programData.image}}" [alt]="programData.image_alt" [title]="programData.image_title">
                 </div>
             <!-- </ng-container> -->
         </div>
@@ -32,7 +32,7 @@
     <section class="story_section">
         <ng-container *ngFor="let item of storyImage; index as index">
             <div class="card_image">
-                <img src="{{imageBaseurl +'section_third_image/'+ item.image}}" alt="">
+                <img src="{{imageBaseurl +'section_third_image/'+ item.image}}" [alt]="item.image_alt" [title]="item.image_title">
                 <div class="design_section" *ngIf="index==0" style="background:#ffca05"></div>
                 <div class="design_section" *ngIf="index==1" style="background:#f26f21"></div>
                 <div class="design_section" *ngIf="index==2" style="background:#e21f26"></div>
@@ -45,7 +45,7 @@
                 <div class="product-item">
                     <div class="product-item-content">
                         <div class="image_div">
-                            <img src="{{imageBaseurl +'section_fifth_image/'+images.image}}" alt="" class="product-image" />
+                            <img src="{{imageBaseurl +'section_fifth_image/'+images.image}}" [alt]="images.image_alt" [title]="images.image_title" class="product-image" />
                         </div>
                     </div>
                 </div>
