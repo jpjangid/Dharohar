@@ -30,7 +30,7 @@
             </div>
             <div class="images_section">
                 <ng-container *ngFor="let item of detailImages">
-                    <img src="{{imageBaseurl+'section_two_image_story/'+item.image}}" [alt]="item.image_alt" [title]="item.image_title">
+                    <img src="{{imageBaseurl+'section_two_image_story/'+item.image}}" [alt]="item.image_alt ?? ''" [title]="item.image_title ?? ''">
                 </ng-container>
             </div>
         </div>
@@ -40,7 +40,7 @@
                     <div class="product-item">
                         <div class="product-item-content">
                             <div class="image_div">
-                                <img src="{{imageBaseurl +'section_two_image_story/'+images.image}}" [alt]="images.image_alt" [title]="images.image_title" class="product-image" />
+                                <img src="{{imageBaseurl +'section_two_image_story/'+images.image}}" [alt]="images.image_alt ?? ''" [title]="images.image_title ?? ''" class="product-image" />
                             </div>
                         </div>
                     </div>

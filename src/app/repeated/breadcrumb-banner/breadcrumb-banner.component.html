@@ -1,7 +1,7 @@
 <section class="overview_section">
     <div class="row static_row m-0">
         <div class="col-12 map_col p-0">
-            <img src="{{bannerData.image}}" [alt]="bannerData.image_alt" [title]="bannerData.image_title">
+            <img src="{{bannerData.image}}" [alt]="bannerData.image_alt ?? ''" [title]="bannerData.image_title ?? ''">
         </div>
     </div>
 </section>
