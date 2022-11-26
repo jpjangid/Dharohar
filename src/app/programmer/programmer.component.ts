@@ -48,6 +48,8 @@ export class ProgrammerComponent implements OnInit {
         this.programData.image = this.imageBaseurl + "section_second_image/" + response[0].image;
         this.programData.heading = response[0].heading;
         this.programData.text_content = response[0].text_content;
+        this.programData.image_title = response[0].image_title;
+        this.programData.image_alt = response[0].image_alt;
       }
       if (response[0]?.section_name == 'third_section') {
         this.storyImage = response;
