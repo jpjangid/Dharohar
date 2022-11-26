@@ -205,10 +205,17 @@
                             display: block;
                             list-style: none;
                             padding: 15px;
-                            display: flex;
+                            // display: flex;
                             justify-content: space-between;
                             margin: 0;
                             background: #f4f4f4;
+                            font-size: 15px;
+                            li {
+                                padding-bottom: 15px;
+                                &:last-child {
+                                    padding-bottom: 0;
+                                }
+                            }
                         }
                     }
 
