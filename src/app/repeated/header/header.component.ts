@@ -17,12 +17,15 @@ export class HeaderComponent implements OnInit {
   langCheck: boolean = true;
   language: any;
   submenuCheck: boolean = false;
+  subsubmenuCheck: boolean = false;
   img_baseURL = environment.asset_baseURL;
   openMenu: Boolean = false;
   displayModal: boolean = false;
   searchWord: any;
   searchResult: any = []
   searchWordUpdate = new Subject<string>();
+  menuIndex: any;
+  subMenuIndex: any;
   constructor(private route: Router, private getService: GetServicesService, private activatedRoute: ActivatedRoute, private _sanitizer: DomSanitizer) {
     this.searchWordUpdate.pipe(
       debounceTime(500),
@@ -65,7 +68,9 @@ export class HeaderComponent implements OnInit {
   }
 
   openmenu() {
-    this.openMenu = !this.openMenu
+    this.openMenu = !this.openMenu;
+    this.submenuCheck = false;
+    this.subsubmenuCheck = false;
   }
 
   navigate(slug?: any) {
@@ -85,8 +90,17 @@ export class HeaderComponent implements OnInit {
     this.langCheck = !this.langCheck
   }
 
-  openSubmenus() {
-    this.submenuCheck = !this.submenuCheck;
+  openSubmenus(index:any, string:any) {
+    if(string == 'submenu') {
+      this.submenuCheck = !this.submenuCheck;
+      console.log(this.menuIndex);
+      this.menuIndex = index;
+      console.log(this.menuIndex);
+    }
+    else {
+      this.subsubmenuCheck = !this.subsubmenuCheck;
+      this.subMenuIndex = index;
+    }
   }
 
   getLanguage(event: any) {

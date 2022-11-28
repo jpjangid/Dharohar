@@ -196,12 +196,15 @@
                     .unOrderSubNavLinks {
                         display: none;
                         transition: 0.3s;
+                        .subsublink {
+                            display: none;
+                        }
                     }
 
                     &:hover {
                         .unOrderSubNavLinks {
                             position: absolute;
-                            width: 135px;
+                            // width: 135px;
                             display: block;
                             list-style: none;
                             padding: 15px;
@@ -215,12 +218,26 @@
                                 &:last-child {
                                     padding-bottom: 0;
                                 }
+                                .subsublink {
+                                    display: none;
+                                }
+                                &:hover {
+                                    .subsublink {
+                                        display: block;
+                                        list-style: none;
+                                        padding: 5px 0 0 5px;
+                                    }
+                                }
                             }
                         }
                     }
 
                     &:last-child {
                         padding-right: 0;
+
+                        .unOrderSubNavLinks {
+                            right: 60px;
+                        }
                     }
                 }
             }
@@ -399,7 +416,7 @@
             .nav_link {
                 // padding-right: 7.5px;
                 cursor: pointer;
-                display: flex;
+                display: block;
                 align-items: center;
                 i {
                     font-size: 25px;
