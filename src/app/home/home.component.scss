@@ -71,14 +71,20 @@
         .container-fluid {
             .section_content {
                 position: relative;
-                padding: 0 15px;
+                padding: 0 15px 90px 15px;
 
                 .section_text {
                     // font-family: Kohinoorregular;
+                    max-height: 90px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     margin: 0;
-                    padding-bottom: 90px;
+                    // padding-bottom: 90px;
                     font-size: 20px;
                     width: calc(100% - 12.57%);
+                    p {
+                        max-height: 90px;
+                    }
                 }
 
                 .dot_man1 {
@@ -300,6 +306,8 @@
 
                             .heading_content {
 
+                                height: 304px;
+
                                 // padding-left: 45px;
                                 h2 {
                                     padding: 0 0 30px 0;
@@ -309,7 +317,7 @@
 
                                 .who_we_are_content {
                                     line-height: 29px;
-                                    height: 211px;
+                                    max-height: 208px;
                                     overflow: hidden;
                                     // letter-spacing: 1px;
                                     font-size: 20px;
@@ -384,28 +392,32 @@
                             padding: 150px 45px 150px 90px;
                             min-height: 604px;
 
-                            h2 {
-                                padding-bottom: 30px;
-                                // font-family: kohinoorbold;
-                                font-size: 35px;
+                            .heading_content {
+                                height: 304px;
+                                h2 {
+                                    padding-bottom: 30px;
+                                    // font-family: kohinoorbold;
+                                    font-size: 35px;
+                                }
+    
+                                .who_we_are_content {
+                                    line-height: 29px;
+                                    max-height: 208px;
+                                    overflow: hidden;
+                                    // letter-spacing: 1px;
+                                    font-size: 20px;
+                                    // font-family: kohinoorlight;
+                                }
+    
+                                .visit_btn {
+                                    border: 1px solid black;
+                                    padding: 5px 25px;
+                                    border-radius: 0;
+                                    cursor: pointer;
+                                    margin: 20px 0;
+                                }
                             }
 
-                            .who_we_are_content {
-                                line-height: 29px;
-                                height: 211px;
-                                overflow: hidden;
-                                // letter-spacing: 1px;
-                                font-size: 20px;
-                                // font-family: kohinoorlight;
-                            }
-
-                            .visit_btn {
-                                border: 1px solid black;
-                                padding: 5px 25px;
-                                border-radius: 0;
-                                cursor: pointer;
-                                margin: 20px 0;
-                            }
                         }
                     }
                 }
@@ -453,7 +465,7 @@
 
                     .dotman_img {
                         height: 173px;
-                        width: 173px;
+                        // width: 173px;
                         margin: 49px 45px 0 30px;
                     }
 
@@ -465,28 +477,32 @@
                             padding: 150px 90px 150px 45px;
                             min-height: 604px;
 
-                            h2 {
-                                padding-bottom: 30px;
-                                // font-family: kohinoorbold;
-                                font-size: 35px;
+                            .heading_content {
+                                height: 304px;
+                                h2 {
+                                    padding-bottom: 30px;
+                                    // font-family: kohinoorbold;
+                                    font-size: 35px;
+                                }
+    
+                                .who_we_are_content {
+                                    line-height: 29px;
+                                    max-height: 208px;
+                                    overflow: hidden;
+                                    // letter-spacing: 1px;
+                                    font-size: 20px;
+                                    // font-family: kohinoorlight;
+                                }
+    
+                                .visit_btn {
+                                    border: 1px solid black;
+                                    padding: 5px 25px;
+                                    border-radius: 0;
+                                    cursor: pointer;
+                                    margin: 20px 0;
+                                }
                             }
 
-                            .who_we_are_content {
-                                line-height: 29px;
-                                height: 211px;
-                                overflow: hidden;
-                                // letter-spacing: 1px;
-                                font-size: 20px;
-                                // font-family: kohinoorlight;
-                            }
-
-                            .visit_btn {
-                                border: 1px solid black;
-                                padding: 5px 25px;
-                                border-radius: 0;
-                                cursor: pointer;
-                                margin: 20px 0;
-                            }
                         }
                     }
                 }
@@ -503,6 +519,22 @@
         height: 200%;
         position: relative;
         top: -100%;
+    }
+}
+
+:host ::ng-deep {
+    .all_section {
+        .card_section {
+            .container-fluid {
+                .section_content {
+                    .section_text {
+                        p {
+                            // max-height: 90px!important;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -538,6 +570,7 @@
 
                     .section_text {
                         font-size: 17px;
+                        max-height: 120px;
                     }
 
                     .dot_man2 {
@@ -700,16 +733,17 @@
                             .who_we_are_heading {
                                 padding: 120px 30px 120px 60px;
                                 min-height: 510px;
-
-                                h2 {
-                                    padding: 0 0 15px 0;
-                                    font-size: 30px;
-                                }
-
-                                .who_we_are_content {
-                                    line-height: normal;
-                                    // letter-spacing: 0px;
-                                    font-size: 17px;
+                                .heading_content {
+                                    h2 {
+                                        padding: 0 0 15px 0;
+                                        font-size: 30px;
+                                    }
+    
+                                    .who_we_are_content {
+                                        line-height: normal;
+                                        // letter-spacing: 0px;
+                                        font-size: 17px;
+                                    }
                                 }
                             }
                         }
@@ -733,7 +767,7 @@
     
                         .dotman_img {
                             height: 140px;
-                            width: 150px;
+                            // width: 150px;
                             margin: 34px 0px 0 30px;
                         }
     
@@ -742,17 +776,20 @@
                             .who_we_are_heading {
                                 padding: 120px 60px 120px 30px;
                                 min-height: 510px;
-    
-                                h2 {
-                                    padding: 0 0 15px 0;
-                                    font-size: 30px;
+
+                                .heading_content {
+                                    h2 {
+                                        padding: 0 0 15px 0;
+                                        font-size: 30px;
+                                    }
+        
+                                    .who_we_are_content {
+                                        line-height: normal;
+                                        // letter-spacing: 0px;
+                                        font-size: 17px;
+                                    }
                                 }
     
-                                .who_we_are_content {
-                                    line-height: normal;
-                                    // letter-spacing: 0px;
-                                    font-size: 17px;
-                                }
                             }
                         }
                     }
@@ -862,7 +899,17 @@
         }
         .card_section {
             top: -30%;
+
+            .container-fluid {
+                .section_content {
+
+                    .section_text {
+                        max-height: 102px;
+                    }
+                }
+            }
         }
+
         .gallery_section {
             top: -37%;
         }
@@ -895,10 +942,11 @@
             padding: 75px 37.5px 45px 37.5px;
             .container-fluid {
                 .section_content {
-                    padding: 0 7.5px;
+                    padding: 0 7.5px 90px 7.5px;
                     .section_text {
                         font-size: 15px;
-                        padding-bottom: 60px;
+                        // padding-bottom: 60px;
+                        max-height: 112.5px;
                     }
 
                     .dot_man2 {
@@ -1007,13 +1055,14 @@
                                 min-height: 405px;
 
                                 .heading_content {
+                                    height: 229px;
                                     h2 {
                                         font-size: 25px;
                                     }
 
                                     .who_we_are_content {
                                         font-size: 15px;
-                                        height: 160px;
+                                        max-height: 160px;
                                     }
                                 }
 
@@ -1048,14 +1097,16 @@
                             .who_we_are_heading {
                                 padding: 75px 15px 75px 30px;
                                 min-height: 405px;
-
-                                h2 {
-                                    font-size: 25px;
-                                }
-
-                                .who_we_are_content {
-                                    font-size: 15px;
-                                    height: 160px;
+                                .heading_content {
+                                    height: 229px;
+                                    h2 {
+                                        font-size: 25px;
+                                    }
+    
+                                    .who_we_are_content {
+                                        font-size: 15px;
+                                        max-height: 160px;
+                                    }
                                 }
                             }
                         }
@@ -1079,7 +1130,7 @@
     
                         .dotman_img {
                             height: 100px;
-                            width: 100px;
+                            // width: 100px;
                             margin: 20px 10px 0 30px;
                         }
     
@@ -1088,15 +1139,19 @@
                             .who_we_are_heading {
                                 padding: 75px 30px 75px 15px;
                                 min-height: 405px;
-    
-                                h2 {
-                                    font-size: 25px;
+
+                                .heading_content {
+                                    height: 229px;
+                                    h2 {
+                                        font-size: 25px;
+                                    }
+        
+                                    .who_we_are_content {
+                                        font-size: 15px;
+                                        max-height: 160px;
+                                    }
                                 }
     
-                                .who_we_are_content {
-                                    font-size: 15px;
-                                    height: 160px;
-                                }
                             }
                         }
                     }
@@ -1621,11 +1676,12 @@
             top: -130%;
             .container-fluid {
                 .section_content {
-                    padding: 0;
+                    padding: 0 0 90px 0;
                     .section_text {
                         width: 100%;
                         font-size: 15px;
-                        padding-bottom: 90px
+                        max-height: 270.5px;
+                        // padding-bottom: 90px
                     }
 
                     .dot_man2 {
@@ -1815,8 +1871,8 @@
                             }
     
                             .dotman_img {
-                                height: 138px;
-                                width: 138px;
+                                height: 140px;
+                                width: 150px;
                                 padding: 30px 0 0 30px;
                                 margin: 0;
                             }
