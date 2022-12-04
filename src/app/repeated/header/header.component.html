@@ -136,7 +136,7 @@
                         (click)="openSubmenus(index, 'submenu')" class="fa fa-angle-down" style="margin-left:15px;"></i>
                     <ng-container *ngIf="item.subpage?.length>0">
                         <ul *ngIf="submenuCheck && index == menuIndex" class="unOrderSubNavLinks"
-                            style="list-style: none;padding-left: 15px;height:150px; overflow:auto;">
+                            style="list-style: none;padding-left: 15px;max-height:150px; overflow:auto;">
                             <ng-container *ngFor="let submenu of item.subpage; index as subIndex">
                                 <li class="sub_nav_link para_family">
                                     <span (click)="navigate(submenu.slug_eng)">{{submenu.title_eng}}</span><i *ngIf="submenu.subpage?.length>0"

@@ -12,8 +12,8 @@
                         <p class="footer_sub_heading para_family">
                             <span>Third space</span>
                         </p>
-                        <p class="footer_sub_heading para_family">
-                            <span>Get in touch</span>
+                        <p (click)="footerNavigation()" class="footer_sub_heading para_family">
+                            <span >Get in touch</span>
                         </p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-4 p-0 image_div" (click)="bottomToTop()">
@@ -25,13 +25,16 @@
                         <!-- <p class="footer_heading">Follow us</p> -->
                         <div class="social_icons">
                             <div class="icon_images">
-                                <img src="{{img_baseURL}}fb icon.png" alt="" width="100%" height="100%" />
+                                <a href="https://www.facebook.com/Dharohar.udr" target="_blank" rel="noopener noreferrer">
+                                <img src="{{img_baseURL}}fb icon.png" alt="" width="100%" height="100%" /></a>
                             </div>
                             <div class="icon_images">
-                                <img src="{{img_baseURL}}insta icon.png" alt="" width="100%" height="100%" />
+                                <a href="https://www.instagram.com/dharohar_udr/" target="_blank" rel="noopener noreferrer">
+                                <img src="{{img_baseURL}}insta icon.png" alt="" width="100%" height="100%" /></a>
                             </div>
                             <div class="icon_images">
-                                <img src="{{img_baseURL}}linkedin icon.png" alt="" width="100%" height="100%" />
+                                <a href="https://www.linkedin.com/company/dharohar" target="_blank" rel="noopener noreferrer">
+                                <img src="{{img_baseURL}}linkedin icon.png" alt="" width="100%" height="100%" /></a>
                             </div>
                         </div>
                         <!-- <p class="footer_heading p-0">Sponsor</p> -->

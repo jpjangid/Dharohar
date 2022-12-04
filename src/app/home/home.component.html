@@ -10,7 +10,7 @@
             </div> -->
             <div class="col-12 map_col p-0">
                 <img src="{{image_baseurl}}banner_image/{{bannerImage.bannerImage}}" [title]="bannerImage.image_title??''"  [alt]="bannerImage.image_alt??''">
-                <p class="absolute_content para_family">Udaipur</p>
+                <p *ngIf="bannerText" class="absolute_content para_family">Udaipur</p>
             </div>
             <!-- <div class="content_section">
                 <p class="m-0">

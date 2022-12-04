@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit , OnChanges{
   cardsHeadSection: any = {};
   image_baseurl = environment.image_baseurl;
   asset_baseURL = environment.asset_baseURL;
+  bannerText: boolean = false;
   constructor(private getService: GetServicesService) { }
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.homeData);
@@ -25,6 +26,9 @@ export class HomeComponent implements OnInit , OnChanges{
 
   ngOnInit(): void {
     this.homeData?.data?.forEach((response: any) => {
+      if (response[0]?.slug == 'home') {
+        this.bannerText = true;
+      }
       if (response[0]?.section_name == 'banner') {
         this.bannerImage.bannerImage = response[0]?.image;
         this.bannerImage.image_alt = response[0].image_alt;

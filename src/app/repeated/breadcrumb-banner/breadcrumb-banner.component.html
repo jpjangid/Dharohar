@@ -9,7 +9,7 @@
     <div>
         <div class="breadcrumb_links heading_family">
             <ng-container *ngFor="let item of bannerData.breadCrumb; index as index">
-                {{item | titlecase}}
+                {{item}}
                 <ng-container *ngIf="((bannerData.breadCrumb?.length)-1) != index">
                     <div class="breadcrumb_dots" style="color: #ffca05;" *ngFor="let item of [].constructor(3)"></div>
                 </ng-container>
