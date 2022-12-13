@@ -17,6 +17,7 @@ export class TemplatesComponent implements OnInit {
   listData: any;
   detailData: any;
   programsData: any;
+  pageData: any;
   constructor(private activatedRoute: ActivatedRoute, private getService: GetServicesService, private router: Router, public _utility: AppUtility) {
     this._utility.loader(true);
    }
@@ -27,27 +28,35 @@ export class TemplatesComponent implements OnInit {
     // this.getService.language.subscribe((response: any) => {
       await this.getService.getPageData((this.slug._routerState.url)).then((res: any) => {
         console.log(res);
-        res?.data?.forEach((response: any, index: any) => {
-          if (index == 0) {
-            this.template_id = response[0]?.template_id;
-            console.log(this.template_id);            
-            if (this.template_id == 1) {
-              this.homeData = res;
+        if(res) {
+          res?.data?.forEach((response: any, index: any) => {
+            if (index == 0) {
+              this.template_id = response[0]?.template_id;
+              console.log(this.template_id);            
+              if (this.template_id == 1) {
+                this.homeData = res;
+              }
+              if (this.template_id == 2) {
+                this.contactData = res;
+              }
+              if (this.template_id == 5) {
+                this.listData = res;
+              }
+              if (this.template_id == 4) {
+                this.detailData = res;
+              }
+              if (this.template_id == 3) {
+                this.programsData = res;
+              }
+              if (this.template_id == 6) {
+                this.pageData = res;
+              }
             }
-            if (this.template_id == 2) {
-              this.contactData = res;
-            }
-            if (this.template_id == 5) {
-              this.listData = res;
-            }
-            if (this.template_id == 4) {
-              this.detailData = res;
-            }
-            if (this.template_id == 3) {
-              this.programsData = res;
-            }
-          }
-        });
+          });
+        }
+        else {
+          this.router.navigateByUrl('**')
+        }
       })
       this._utility.loader(false);
     // })

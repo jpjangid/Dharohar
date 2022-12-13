@@ -31,10 +31,10 @@ export class FooterComponent implements OnInit {
      })
   }
 
-  footerNavigation() {
+  footerNavigation(route:any) {
     this.route.routeReuseStrategy.shouldReuseRoute = () => false;
     this.route.onSameUrlNavigation = 'reload';
-    this.route.navigate([this.language + '/contact']);
+    this.route.navigate([this.language + '/' + route]);
     // this.route.navigateByUrl(this.language+'/contact');
   }
 

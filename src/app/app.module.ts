@@ -21,6 +21,8 @@ import {ToastModule} from 'primeng/toast';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TemplatesComponent } from './templates/templates.component';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { TemplatesComponent } from './templates/templates.component';
     ProgrammerComponent,
     ContactComponent,
     StoriesComponent,
-    TemplatesComponent
+    TemplatesComponent,
+    ComingSoonComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,

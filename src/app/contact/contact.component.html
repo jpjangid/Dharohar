@@ -34,8 +34,13 @@
                     </div>
                     <div class="parentSection">
                         <label for="email">Email</label>
-                        <input type="email" [class.is-invalid]="(contactForm.submitted && contactFormData.get('email')?.invalid) || (contactFormData.get('email')?.touched && contactFormData.get('email')?.invalid)" formControlName="email" id="email" class="form-control" required>
-                        <div class="invalid-feedback m-0"> Email is Required </div>
+                        <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  [class.is-invalid]="(contactForm.submitted && contactFormData.get('email')?.invalid) || (contactFormData.get('email')?.touched && contactFormData.get('email')?.invalid)" formControlName="email" id="email" class="form-control" required>
+                        <div class="invalid-feedback" *ngIf="contactFormData.controls?.['email']?.errors?.['required']">
+                            Email Address is Required
+                        </div>
+                        <div class="invalid-feedback" *ngIf="contactFormData.controls?.['email']?.errors?.['pattern']">
+                            Email Address is Invalid
+                        </div>
                     </div>
                     <div class="parentSection">
                         <label for="subject">Subject</label>

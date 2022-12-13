@@ -9,7 +9,8 @@
                 <p class="btn visit_btn">Explore</p>
             </div> -->
             <div class="col-12 map_col p-0">
-                <img src="{{image_baseurl}}banner_image/{{bannerImage.bannerImage}}" [title]="bannerImage.image_title??''"  [alt]="bannerImage.image_alt??''">
+                <img src="{{image_baseurl}}banner_image/{{bannerImage.bannerImage}}"
+                    [title]="bannerImage.image_title??''" [alt]="bannerImage.image_alt??''">
                 <p *ngIf="bannerText" class="absolute_content para_family">Udaipur</p>
             </div>
             <!-- <div class="content_section">
@@ -20,7 +21,7 @@
         </div>
     </section>
     <!-- static section end -->
-    
+
     <!-- cards section start -->
     <section class="card_section">
         <div class="container-fluid p-0 m-0">
@@ -30,34 +31,40 @@
                     <img src="./../../assets/dot man 1.png" alt="" width="100%" height="100%">
                 </div> -->
                 <div class="dot_man2">
-                    <img src="{{image_baseurl}}section_second_image/{{cardsHeadSection.image}}" [title]="cardsHeadSection.image_title ?? ''"  [alt]="cardsHeadSection.image_alt ?? ''" width="100%" height="100%">
+                    <img src="{{image_baseurl}}section_second_image/{{cardsHeadSection.image}}"
+                        [title]="cardsHeadSection.image_title ?? ''" [alt]="cardsHeadSection.image_alt ?? ''"
+                        width="100%" height="100%">
                 </div>
             </div>
             <div class="row nav_link_cards m-0">
                 <ng-container *ngFor="let item of cardArray; index as index">
                     <!-- <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-3" [ngClass]="{'cards_area0': !cardAnimation , 'animated_card0' : cardAnimation}"> -->
                     <div class="project_card">
-                        <!-- <app-project-card [projectCardData]="item"></app-project-card> -->
-                        <div [ngClass]="'card_box'">
-                            <div class="card_image">
-                                <img src="{{image_baseurl}}section_third_image/{{item.image}}" [title]="item.image_title ?? ''" [alt]="item.image_alt ?? ''">
+                        <a href="{{item.url ? item.url : ''}}" style="text-decoration:none;"
+                            [ngStyle]="{'cursor':item?.url ? 'pointer' : 'default' }">
+                            <!-- <app-project-card [projectCardData]="item"></app-project-card> -->
+                            <div [ngClass]="'card_box'">
+                                <div class="card_image">
+                                    <img src="{{image_baseurl}}section_third_image/{{item.image}}"
+                                        [title]="item.image_title ?? ''" [alt]="item.image_alt ?? ''">
+                                </div>
+                                <div class="card_content">
+                                    <p class="card_heading m-0 heading_family">{{item.heading}}</p>
+                                    <p class="card_text m-0 para_family" [innerHTML]="item.text_content"></p>
+
+                                    <div class="design_section" *ngIf="index==0" style="background:#ffca05"></div>
+                                    <div class="design_section" *ngIf="index==1" style="background:#f26f21"></div>
+                                    <div class="design_section" *ngIf="index==2" style="background:#e21f26"></div>
+                                </div>
                             </div>
-                            <div class="card_content">
-                                <p class="card_heading m-0 heading_family">{{item.heading}}</p>
-                                <p class="card_text m-0 para_family" [innerHTML]="item.text_content"></p>
-                                
-                                <div class="design_section" *ngIf="index==0" style="background:#ffca05"></div>
-                                <div class="design_section" *ngIf="index==1" style="background:#f26f21"></div>
-                                <div class="design_section" *ngIf="index==2" style="background:#e21f26"></div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </ng-container>
             </div>
         </div>
     </section>
     <!-- cards section end -->
-    
+
     <!-- gallery section start -->
     <section class="gallery_section">
         <div class="gallery_container no-gutters p-0">
@@ -67,27 +74,37 @@
             <div class="gallery_img">
                 <div class="row m-0 gallery_row">
                     <div class="banner_img">
-                        <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[1]?.image}}" [title]="gallerySection[1].image_title ?? ''" [alt]="gallerySection[1].image_alt ?? ''" width="100%" height="100%">
+                        <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[1]?.image}}"
+                            [title]="gallerySection[1].image_title ?? ''" [alt]="gallerySection[1].image_alt ?? ''"
+                            width="100%" height="100%">
                         <!-- <p>Lorem ipsum dolor sit</p> -->
                     </div>
                     <div class="bulk_images">
                         <div class="images_row row m-0">
                             <div class="images">
-                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[2]?.image}}" [title]="gallerySection[2].image_title ?? ''" [alt]="gallerySection[2].image_alt ?? ''" width="100%" height="100%">
+                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[2]?.image}}"
+                                    [title]="gallerySection[2].image_title ?? ''"
+                                    [alt]="gallerySection[2].image_alt ?? ''" width="100%" height="100%">
                                 <!-- <p>Lorem ipsum</p> -->
                             </div>
                             <div class="images">
-                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[3]?.image}}" [title]="gallerySection[3].image_title ?? ''" [alt]="gallerySection[3].image_alt ?? ''" width="100%" height="100%">
+                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[3]?.image}}"
+                                    [title]="gallerySection[3].image_title ?? ''"
+                                    [alt]="gallerySection[3].image_alt ?? ''" width="100%" height="100%">
                                 <!-- <p>Lorem ipsum</p> -->
                             </div>
                         </div>
                         <div class="images_row row m-0">
                             <div class="images">
-                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[4]?.image}}" [title]="gallerySection[4].image_title ?? ''" [alt]="gallerySection[5].image_alt ?? ''" width="100%" height="100%">
+                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[4]?.image}}"
+                                    [title]="gallerySection[4].image_title ?? ''"
+                                    [alt]="gallerySection[5].image_alt ?? ''" width="100%" height="100%">
                                 <!-- <p>Lorem ipsum</p> -->
                             </div>
                             <div class="images">
-                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[5]?.image}}" [title]="gallerySection[5].image_title ?? ''" [alt]="gallerySection[5].image_alt ?? ''" width="100%" height="100%">
+                                <img src="{{image_baseurl}}section_fourth_gallery/{{gallerySection[5]?.image}}"
+                                    [title]="gallerySection[5].image_title ?? ''"
+                                    [alt]="gallerySection[5].image_alt ?? ''" width="100%" height="100%">
                                 <!-- <p>Lorem ipsum</p> -->
                             </div>
                         </div>
@@ -99,30 +116,43 @@
     <!-- gallery section end -->
     <ng-container *ngFor="let item of absoluteSection; index as index;">
         <!-- who we are section start -->
-        <section *ngIf="index%2 == 0" [ngClass]="{ who_we_are_section: !(index==absoluteSection?.length-1), volunteering_section: (index==absoluteSection?.length-1)}">
-            <div [ngClass]="{ who_we_are_container: !(index==absoluteSection?.length-1), volunteering_section_container: (index==absoluteSection?.length-1)}">
+        <section *ngIf="index%2 == 0"
+            [ngClass]="{ who_we_are_section: !(index==absoluteSection?.length-1), volunteering_section: (index==absoluteSection?.length-1)}">
+            <div
+                [ngClass]="{ who_we_are_container: !(index==absoluteSection?.length-1), volunteering_section_container: (index==absoluteSection?.length-1)}">
                 <div class="row m-0 section_row">
                     <div class="section_col1">
                     </div>
                     <div class="section_col2 p-0">
-                        <div class="d-flex absolute_section m-0">
+                        <div class="d-flex justify-content-between absolute_section m-0">
                             <div class="">
                                 <div class="dotman_img">
-                                    <img src="{{image_baseurl}}section_fifth_image_short/{{item.sort_image}}" [title]="item.sort_image_title ?? ''" [alt]="item.sort_image_alt ?? ''" width="100%" height="100%">
+                                    <img src="{{image_baseurl}}section_fifth_image_short/{{item.sort_image}}"
+                                        [title]="item.sort_image_title ?? ''" [alt]="item.sort_image_alt ?? ''"
+                                        width="100%" height="100%">
                                 </div>
                                 <div class="section_image">
-                                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}" [title]="item.image_title ?? ''" [alt]="item.image_alt ?? ''" width="100%" height="100%">
+                                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}"
+                                        [title]="item.image_title ?? ''" [alt]="item.image_alt ?? ''" width="100%"
+                                        height="100%">
                                 </div>
                             </div>
                             <div class="contect_section p-0">
                                 <div class="who_we_are_heading">
                                     <div class="heading_content">
                                         <h2 class="heading_family">{{item.heading}}</h2>
-                                        <p class="who_we_are_content para_family" [innerHTML]="item.text_content">
+                                        <p class="who_we_are_content para_family">
+                                            {{parsed(item.text_content)}}
                                         </p>
-                                        <img *ngIf="index % 3 == 0" src="{{asset_baseURL}}yellow arrow.png" alt="">
-                                        <img *ngIf="index % 3 == 1" src="{{asset_baseURL}}red arrow.png" alt="">
-                                        <img *ngIf="index % 3 == 2" src="{{asset_baseURL}}orange arrow.png" alt="">
+                                        <ng-container *ngIf="item?.url">
+                                            <a href="{{item.url}}" style="text-decoration:none">
+                                                <img *ngIf="index % 3 == 0" src="{{asset_baseURL}}yellow arrow.png"
+                                                    alt="">
+                                                <img *ngIf="index % 3 == 1" src="{{asset_baseURL}}red arrow.png" alt="">
+                                                <img *ngIf="index % 3 == 2" src="{{asset_baseURL}}orange arrow.png"
+                                                    alt="">
+                                            </a>
+                                        </ng-container>
                                     </div>
                                 </div>
                             </div>
@@ -130,12 +160,13 @@
                     </div>
                 </div>
                 <div class="section_image_absolute">
-                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}" [alt]="item.image_alt ?? ''" [title]="item.image_title ?? ''" width="100%" height="100%">
+                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}" [alt]="item.image_alt ?? ''"
+                        [title]="item.image_title ?? ''" width="100%" height="100%">
                 </div>
             </div>
         </section>
         <!-- who we are section end -->
-        
+
         <!-- our history section start -->
         <section *ngIf="index%2 != 0" class="our_history_section">
             <div class="our_history_section_container">
@@ -144,23 +175,45 @@
                         <div class="d-flex justify-content-between m-0 main_content">
                             <div class="contect_section">
                                 <div class="who_we_are_heading">
+
                                     <div class="heading_content">
-                                        <h2 class="heading_family">{{item.heading}}</h2>
-                                        <p class="who_we_are_content para_family" [innerHTML]="item.text_content">
-                                        </p>
-                                        <img *ngIf="index % 3 == 0" src="{{asset_baseURL}}yellow arrow.png" alt="" >
-                                        <img *ngIf="index % 3 == 1" src="{{asset_baseURL}}red arrow.png" alt="">
-                                        <img *ngIf="index % 3 == 2" src="{{asset_baseURL}}orange arrow.png" alt=""> 
+                                        <div class="d-flex justify-content-between">
+                                            <h2 class="heading_family">{{item.heading}}</h2>
+                                            <div class="dotman_img dothead_1024">
+                                                <img src="{{image_baseurl}}section_fifth_image_short/{{item.sort_image}}"
+                                                    [title]="item.sort_image_title ?? ''"
+                                                    [alt]="item.sort_image_alt ?? ''" width="100%" height="100%">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="shape_section"></div>
+                                            <p class="who_we_are_content para_family">
+                                                {{parsed(item.text_content)}}
+                                            </p>
+                                        </div>
+                                        <ng-container *ngIf="item?.url">
+                                            <a href="{{item.url}}" style="text-decoration:none">
+                                                <img *ngIf="index % 3 == 0" src="{{asset_baseURL}}yellow arrow.png"
+                                                    alt="">
+                                                <img *ngIf="index % 3 == 1" src="{{asset_baseURL}}red arrow.png" alt="">
+                                                <img *ngIf="index % 3 == 2" src="{{asset_baseURL}}orange arrow.png"
+                                                    alt="">
+                                            </a>
+                                        </ng-container>
                                     </div>
                                     <!-- <p class="btn visit_btn">Explore</p> -->
                                 </div>
                             </div>
-                            <div class="pr-md-0">
+                            <div class="pr-md-0 dothead_section">
                                 <div class="dotman_img">
-                                    <img src="{{image_baseurl}}section_fifth_image_short/{{item.sort_image}}" [title]="item.sort_image_title ?? ''" [alt]="item.sort_image_alt ?? ''" width="100%" height="100%">
+                                    <img src="{{image_baseurl}}section_fifth_image_short/{{item.sort_image}}"
+                                        [title]="item.sort_image_title ?? ''" [alt]="item.sort_image_alt ?? ''"
+                                        width="100%" height="100%">
                                 </div>
                                 <div class="section_image">
-                                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}" [alt]="item.image_alt ?? ''" [title]="item.image_title ?? ''" width="100%" height="100%">
+                                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}"
+                                        [alt]="item.image_alt ?? ''" [title]="item.image_title ?? ''" width="100%"
+                                        height="100%">
                                 </div>
                             </div>
                         </div>
@@ -168,13 +221,14 @@
                     <div class="col-md-3 col-12 section_col1"></div>
                 </div>
                 <div class="section_image_absolute">
-                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}"  [title]="item.image_title ?? ''" [alt]="item.image_alt ?? ''" width="100%" height="100%">
+                    <img src="{{image_baseurl}}section_fifth_image/{{item.image}}" [title]="item.image_title ?? ''"
+                        [alt]="item.image_alt ?? ''" width="100%" height="100%">
                 </div>
             </div>
         </section>
         <!-- our history section end -->
     </ng-container>
-    
+
     <!-- volunteering section start -->
     <!-- <section class="volunteering_section">
         <div class="volunteering_section_container">
@@ -208,4 +262,3 @@
     </section> -->
     <!-- volunteering section end -->
 </div>
-

@@ -52,6 +52,13 @@ export class HomeComponent implements OnInit , OnChanges{
         console.log(this.absoluteSection)
       }
     });
+    var tempDivElement = document.createElement("div");
+    tempDivElement.innerHTML = this.absoluteSection[1].text_content;
+  }
+  parsed(content:any) {
+    var tempDivElement = document.createElement("div");
+    tempDivElement.innerHTML = content;
+    return tempDivElement.textContent
   }
   cardAnimation: boolean = false
   @HostListener("window:scroll", [])
@@ -77,6 +84,10 @@ export class HomeComponent implements OnInit , OnChanges{
     else {
       this.cardAnimation = false
     }
+  }
+
+  showContent() {
+    console.log()
   }
 }
 
